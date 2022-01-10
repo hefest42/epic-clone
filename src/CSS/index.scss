@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
 @import "./header-css.scss";
 
 body {
+    font-family: "Electrolize", sans-serif;
     background-color: rgb(18, 18, 18);
     margin: 0;
     padding: 0;
