@@ -23,7 +23,7 @@ const Header = () => {
             </div>
 
             <div className="header-right">
-                <div>
+                <div className="header-right__user">
                     <span>USERNAME</span>
                 </div>
                 <AccountDropdownMenu />

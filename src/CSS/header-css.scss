@@ -40,7 +40,7 @@ header {
         display: flex;
         align-items: center;
 
-        div {
+        &__user {
             width: 7rem;
             height: 100%;
             cursor: pointer;
@@ -67,7 +67,26 @@ header {
             left: 0%;
             background-color: #2a2a2a;
             width: 7rem;
-            height: 10rem;
+            height: auto;
+            text-align: center;
+
+            display: flex;
+            justify-content: flex-start;
+
+            ul {
+                margin: 0 auto 0 auto;
+                padding: 1rem 0;
+
+                list-style: none;
+
+                :last-child {
+                    padding-bottom: 0;
+                }
+
+                li {
+                    padding-bottom: 1rem;
+                }
+            }
         }
     }
 }
