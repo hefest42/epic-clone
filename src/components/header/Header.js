@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import AccountDropdownMenu from "./AccountDropdownMenu";
+
 const Header = () => {
     return (
         <header>
@@ -24,6 +26,7 @@ const Header = () => {
                 <div>
                     <span>USERNAME</span>
                 </div>
+                <AccountDropdownMenu />
                 <button>DOWNLOAD</button>
             </div>
         </header>

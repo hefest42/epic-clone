@@ -36,6 +36,7 @@ header {
     }
 
     .header-right {
+        position: relative;
         display: flex;
         align-items: center;
 
@@ -58,6 +59,15 @@ header {
             font-weight: bold;
             border: none;
             cursor: pointer;
+        }
+
+        &__dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            background-color: #2a2a2a;
+            width: 7rem;
+            height: 10rem;
         }
     }
 }
