@@ -2,24 +2,32 @@ header {
     background-color: #2a2a2a;
     color: #ccc;
     width: 100%;
-    height: 3.3rem;
-    font-size: 0.75em;
+    height: 3.5rem;
+    font-size: 0.75rem;
 
     display: flex;
     justify-content: space-between;
 
     a {
-        color: white;
+        position: relative;
+        height: 90%;
+        color: #ccc;
         text-decoration: none;
-        padding: 1rem;
+        padding: 0 1rem;
+
+        p {
+            position: relative;
+            top: 15%;
+        }
     }
 
     a:hover {
-        border-bottom: 3px blue solid;
+        border-bottom: 5px solid #0078f2;
+        color: white;
     }
 
     .header-left {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
     }
 }

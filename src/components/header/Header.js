@@ -6,10 +6,19 @@ const Header = () => {
         <header>
             <div className="header-left">
                 <NavLink to="/store">LOGO</NavLink>
-                <NavLink to="/store">STORE</NavLink>
-                <NavLink to="/store">FAQ</NavLink>
-                <NavLink to="/store">HELP</NavLink>
-                <NavLink to="/store">UNREAL ENGINE</NavLink>
+
+                <NavLink to="/store">
+                    <p>STORE</p>
+                </NavLink>
+                <NavLink to="/store">
+                    <p>FAQ</p>
+                </NavLink>
+                <NavLink to="/store">
+                    <p>HELP</p>
+                </NavLink>
+                <NavLink to="/store">
+                    <p>UNREAL ENGINE</p>
+                </NavLink>
             </div>
 
             <div className="header-right">
