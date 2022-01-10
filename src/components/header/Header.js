@@ -5,24 +5,25 @@ const Header = () => {
     return (
         <header>
             <div className="header-left">
-                <NavLink to="/store">LOGO</NavLink>
-
-                <NavLink to="/store">
+                LOGO
+                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/store">
                     <p>STORE</p>
                 </NavLink>
-                <NavLink to="/store">
+                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/FAQ">
                     <p>FAQ</p>
                 </NavLink>
-                <NavLink to="/store">
+                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/help">
                     <p>HELP</p>
                 </NavLink>
-                <NavLink to="/store">
+                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/unreal-engine">
                     <p>UNREAL ENGINE</p>
                 </NavLink>
             </div>
 
             <div className="header-right">
-                <div>NAME</div>
+                <div>
+                    <span>USERNAME</span>
+                </div>
                 <button>DOWNLOAD</button>
             </div>
         </header>
