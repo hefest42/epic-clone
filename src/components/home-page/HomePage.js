@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "../header/Header";
 import HomeSearchBar from "./HomeSearchBar";
+import DiscoverPage from "../discover-page/DiscoverPage";
 
 const HomePage = () => {
     return (
@@ -12,7 +13,7 @@ const HomePage = () => {
                 <HomeSearchBar />
 
                 <Routes>
-                    <Route path="discover" element={<p className="test">discover</p>} />
+                    <Route path="/" element={<DiscoverPage />} />
                     <Route path="browse" element={<p className="test"></p>} />
                     <Route path="news" element={<p className="test"></p>} />
                     <Route path="wishlist" element={<p className="test"></p>} />
