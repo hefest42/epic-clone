@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import AccountDropdownMenu from "./AccountDropdownMenu";
 
+// FIX DROPDOWNMENU
 const Header = () => {
+    const [showDropdownMenu, setShowDropdownMenu] = useState(false);
+
     return (
         <header>
             <div className="header-left">
@@ -23,10 +26,10 @@ const Header = () => {
             </div>
 
             <div className="header-right">
-                <div className="header-right__user">
+                <div className="header-right__user" onMouseEnter={() => setShowDropdownMenu(true)}>
                     <span>USERNAME</span>
                 </div>
-                <AccountDropdownMenu />
+                {showDropdownMenu && <AccountDropdownMenu />}
                 <button>DOWNLOAD</button>
             </div>
         </header>
