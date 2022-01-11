@@ -1,7 +1,13 @@
 import React from "react";
 
+import HeroCarousel from "./HeroCarousel";
+
 const DiscoverPage = () => {
-    return <div></div>;
+    return (
+        <div className="discover-container">
+            <HeroCarousel />
+        </div>
+    );
 };
 
 export default DiscoverPage;
