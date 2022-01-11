@@ -1,22 +1,33 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HomeSearchBar = () => {
     return (
         <div className="search-bar">
             <div className="search-bar__left">
                 <form>
-                    <input type="text" />
+                    <input type="text" placeholder="Search" />
                 </form>
                 <div>
-                    <p>Discover</p>
-                    <p>Browse</p>
-                    <p>News</p>
+                    <NavLink className={navData => (navData.isActive ? "search-link__active" : "")} to="/store">
+                        Discover
+                    </NavLink>
+                    <NavLink className={navData => (navData.isActive ? "search-link__active" : "")} to="/store/browse">
+                        Browse
+                    </NavLink>
+                    <NavLink className={navData => (navData.isActive ? "search-link__active" : "")} to="/store/news">
+                        News
+                    </NavLink>
                 </div>
             </div>
 
             <div className="search-bar__right">
-                <p>Wishlist</p>
-                <p>Cart</p>
+                <NavLink className={navData => (navData.isActive ? "search-link__active" : "")} to="store/wishlist">
+                    Wishlist
+                </NavLink>
+                <NavLink className={navData => (navData.isActive ? "search-link__active" : "")} to="store/cart">
+                    Cart
+                </NavLink>
             </div>
         </div>
     );
