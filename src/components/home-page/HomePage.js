@@ -9,8 +9,8 @@ const HomePage = () => {
             <Header />
 
             <Routes>
-                <Route path="discover" element={<p>discover</p>} />
-                <Route path="browse" element={<p>browse</p>} />
+                <Route path="discover" element={<p className="test">discover</p>} />
+                <Route path="browse" element={<p className="test">browse</p>} />
             </Routes>
         </div>
     );

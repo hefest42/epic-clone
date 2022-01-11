@@ -7,7 +7,7 @@ function App() {
         <div>
             <Routes>
                 <Route path="" element={<Navigate to="/store" />} />
-                <Route path="/store" element={<HomePage />} />
+                <Route path="/store/*" element={<HomePage />} />
             </Routes>
         </div>
     );
