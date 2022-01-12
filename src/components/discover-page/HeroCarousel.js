@@ -12,14 +12,14 @@ const HeroCarousel = () => {
             <div className="hero-left">
                 {HERO_GAMES.map((game, i) => {
                     return (
-                        <div key={i} className="poster-container">
-                            <img
-                                style={{
-                                    transform: `translateX(${(i - currentSlide) * 100}%)`,
-                                }}
-                                src={game.posterBig}
-                                alt=""
-                            />
+                        <div
+                            key={i}
+                            className="poster-container"
+                            style={{
+                                transform: `translateX(${(i - currentSlide) * 100}%)`,
+                            }}
+                        >
+                            <img src={game.posterBig} alt={`${game.name} poster`} />
                         </div>
                     );
                 })}
@@ -28,9 +28,13 @@ const HeroCarousel = () => {
             <div className="hero-right">
                 {HERO_GAMES.map((game, i) => {
                     return (
-                        <div key={i} onClick={() => setCurrentSlide(i)}>
+                        <div
+                            className={i === currentSlide ? "active-poster active-poster-fill" : ""}
+                            key={i}
+                            onClick={() => setCurrentSlide(i)}
+                        >
                             <div>
-                                <img src={game.posterSmall} alt="" />
+                                <img src={game.posterSmall} alt={`${game.name} poster`} />
                                 <p>{game.name}</p>
                             </div>
                         </div>
