@@ -4,7 +4,6 @@
 }
 
 .hero-container {
-    background-color: teal;
     width: 100%;
     height: 42rem;
 
@@ -12,15 +11,41 @@
     justify-content: space-between;
 
     .hero-left {
-        background-color: tomato;
         width: 75%;
         height: 100%;
         border-radius: 20px;
+        position: relative;
+
+        display: flex;
+        // overflow: hidden;
     }
 
     .hero-right {
         background-color: violet;
         width: 20%;
+        height: 100%;
+    }
+
+    .button-container {
+        position: absolute;
+        top: 110%;
+        display: flex;
+        justify-content: space-between;
+        width: 10rem;
+    }
+}
+
+.poster-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    height: 100%;
+
+    img {
+        object-fit: cover;
+        width: 100%;
         height: 100%;
     }
 }
