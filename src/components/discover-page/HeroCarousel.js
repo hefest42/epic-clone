@@ -3,12 +3,10 @@ import { useState } from "react/cjs/react.development";
 
 import { HERO_GAMES } from "../../dummy-server/DUMMY_GAMES";
 
+// const nextSlideHandler = () => setCurrentSlide(currentSlide === HERO_GAMES.length - 1 ? 0 : currentSlide + 1); // Slides going forwards
+
 const HeroCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const nextSlideHandler = () => setCurrentSlide(currentSlide === HERO_GAMES.length - 1 ? 0 : currentSlide + 1); // Slides going forwards
-
-    const prevSlideHandler = () => setCurrentSlide(currentSlide === 0 ? HERO_GAMES.length - 1 : currentSlide - 1); // Slides going backwards
 
     return (
         <div className="hero-container">
@@ -31,7 +29,7 @@ const HeroCarousel = () => {
             <div className="hero-right">
                 {HERO_GAMES.map((game, i) => {
                     return (
-                        <div>
+                        <div onClick={() => setCurrentSlide(i)}>
                             <div>
                                 <img src={game.posterSmall} alt="" />
                                 <p>{game.name}</p>
