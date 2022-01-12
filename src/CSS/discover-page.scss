@@ -79,7 +79,11 @@
 }
 
 .active-poster {
-    background-color: rgba(46, 46, 46, 0.459);
+    background-color: rgba(46, 46, 46, 0.5);
+}
+
+.poster-right:hover {
+    background-color: rgba(46, 46, 46, 0.5);
 }
 
 .active-poster-fill {
@@ -94,8 +98,4 @@
     100% {
         background-position: left;
     }
-}
-
-.poster-right:hover {
-    background-color: rgba(46, 46, 46, 0.459);
 }
