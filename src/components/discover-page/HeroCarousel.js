@@ -28,7 +28,7 @@ const HeroCarousel = () => {
             <div className="hero-right">
                 {HERO_GAMES.map((game, i) => {
                     return (
-                        <div onClick={() => setCurrentSlide(i)}>
+                        <div key={i} onClick={() => setCurrentSlide(i)}>
                             <div>
                                 <img src={game.posterSmall} alt="" />
                                 <p>{game.name}</p>
