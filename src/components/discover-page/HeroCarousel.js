@@ -28,7 +28,18 @@ const HeroCarousel = () => {
                 })}
             </div>
 
-            <div className="hero-right"></div>
+            <div className="hero-right">
+                {HERO_GAMES.map((game, i) => {
+                    return (
+                        <div>
+                            <div>
+                                <img src={game.posterSmall} alt="" />
+                                <p>{game.name}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };
