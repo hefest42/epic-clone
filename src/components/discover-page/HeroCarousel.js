@@ -1,12 +1,18 @@
 import React from "react";
 
-import godOfWarBigPoster from "../../../game-posters/hero-god-of-war-big.jpg";
+import { HERO_GAMES } from "../../dummy-server/DUMMY_GAMES";
 
 const HeroCarousel = () => {
     return (
         <div className="hero-container">
             <div className="hero-left">
-                <img src={godOfWarBigPoster} alt="" />
+                {HERO_GAMES.map((game, i) => {
+                    return (
+                        <div className="poster-container">
+                            <img src={game.posterBig} alt="" />
+                        </div>
+                    );
+                })}
             </div>
             <div className="hero-right"></div>
         </div>
