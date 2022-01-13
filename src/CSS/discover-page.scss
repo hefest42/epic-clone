@@ -1,6 +1,5 @@
 .discover-container {
     width: 75%;
-    height: 5rem;
 }
 
 .hero-container {
@@ -9,84 +8,78 @@
 
     display: flex;
     justify-content: space-between;
+}
 
-    .hero-left {
-        width: 75%;
+.hero-left {
+    width: 75%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+
+    display: flex;
+    overflow: hidden;
+
+    .poster-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        min-width: 100%;
         height: 100%;
-        border-radius: 20px;
-        position: relative;
+        transition: all ease-out 0.2s;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.hero-right {
+    color: #fff;
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .poster-small {
+        width: 100%;
+        height: 6.7rem;
+        border-radius: 10px;
 
         display: flex;
-        overflow: hidden;
-    }
-
-    .hero-right {
-        color: #fff;
-        width: 20%;
-        height: 100%;
+        align-items: center;
 
         div {
-            width: 100%;
-            height: 6.9rem;
-            border-radius: 10px;
-            margin-bottom: 0.2rem;
+            width: 80%;
+            height: 80%;
 
             display: flex;
             justify-content: flex-start;
             align-items: center;
 
-            div {
-                height: 80%;
+            img {
+                width: 4rem;
+                height: 100%;
                 margin-left: 1rem;
+                border-radius: 7px;
+            }
 
-                img {
-                    border-radius: 10px;
-                    object-fit: cover;
-                    width: 25%;
-                    height: 100%;
-                }
-
-                p {
-                    margin-left: 1rem;
-                }
+            p {
+                margin-left: 1rem;
             }
         }
     }
 
-    .button-container {
-        position: absolute;
-        top: 110%;
-        display: flex;
-        justify-content: space-between;
-        width: 10rem;
+    .poster-small:hover {
+        background-color: rgba(75, 75, 75, 0.4);
     }
 }
 
-.poster-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    min-width: 100%;
-    height: 100%;
-    transition: all ease-out 0.2s;
-
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.active-poster {
-    background-color: rgba(46, 46, 46, 0.5);
-}
-
-.poster-right:hover {
-    background-color: rgba(46, 46, 46, 0.5);
-}
-
-.active-poster-fill {
+.poster-small__active {
     display: block;
     background: linear-gradient(to right, rgba(61, 61, 61, 0.7) 50%, transparent 0);
     background-size: 200% 100%;
