@@ -1,5 +1,7 @@
 import React from "react";
 
+import MediumPoster from "./MediumPoster";
+
 const GameCarousel = () => {
     return (
         <div className="game-carousel__container">
@@ -15,7 +17,15 @@ const GameCarousel = () => {
                 </div>
             </div>
 
-            <div className="game-carousel__bottom">test</div>
+            <div className="game-carousel__bottom">
+                <MediumPoster />
+                <MediumPoster />
+                <MediumPoster />
+                <MediumPoster />
+                <MediumPoster />
+                <MediumPoster />
+                <MediumPoster />
+            </div>
         </div>
     );
 };
