@@ -11,6 +11,16 @@ import rainbowExtractionSmallPoster from "../game-posters/rainbow-extraction-sma
 import kenaBigPoster from "../game-posters/hero-kena-big.jpg";
 import kenaSmallPoster from "../game-posters/kena-small.png";
 
+// GAMES ON SALE
+import deadCellsMediumPoster from "../game-posters/dead-cells-medium.jpg";
+import carTuningSimulatorMediumPoster from "../game-posters/car-tuning-simulator-medium.webp";
+import golfClubWastelandMediumPoster from "../game-posters/golf-club-wasteland-medium.webp";
+import outerwerseMediumPoster from "../game-posters/outerverse-medium.webp";
+import sheepoMediumPoster from "../game-posters/sheepo-medium.webp";
+import warshmallowsMediumPoster from "../game-posters/warshmallows-medium.jfif";
+import cobraKaiMediumPoster from "../game-posters/cobra-kai-medium.webp";
+import suchArtMediumPoster from "../game-posters/such-art-medium.jfif";
+
 export const HERO_GAMES = [
     {
         name: "God of War",
@@ -53,5 +63,56 @@ export const HERO_GAMES = [
         posterSmall: kenaSmallPoster,
         price: "39.99",
         releaseDate: "21.09.2021",
+    },
+];
+
+export const GAMES_ON_SALE = [
+    {
+        name: "Car Tuning Simulator",
+        poster: carTuningSimulatorMediumPoster,
+        price: "0.99",
+        discount: "20%",
+    },
+    {
+        name: "Dead Cells",
+        poster: deadCellsMediumPoster,
+        price: "24.99",
+        discount: "50%",
+    },
+    {
+        name: "Golf Club Wasteland",
+        poster: golfClubWastelandMediumPoster,
+        price: "9.99",
+        discount: "50%",
+    },
+    {
+        name: "Outerverse",
+        poster: outerwerseMediumPoster,
+        price: "14.99",
+        discount: "20%",
+    },
+    {
+        name: "Sheepo",
+        poster: sheepoMediumPoster,
+        price: "9.99",
+        discount: "30%",
+    },
+    {
+        name: "Warshmallows",
+        poster: warshmallowsMediumPoster,
+        price: "9.99",
+        discount: "70%",
+    },
+    {
+        name: "Cobra Kai",
+        poster: cobraKaiMediumPoster,
+        price: "19.99",
+        discount: "60%",
+    },
+    {
+        name: "Such Art",
+        poster: suchArtMediumPoster,
+        price: "19.99",
+        discount: "20%",
     },
 ];
