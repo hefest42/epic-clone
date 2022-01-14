@@ -11,6 +11,9 @@ const PosterBig = ({ type, poster, index, slideNumber }) => {
                     }}
                 >
                     <img src={poster} alt="poster" />
+                    <div className="poster-big__cover">
+                        <div></div>
+                    </div>
                 </div>
             );
 
@@ -21,7 +24,7 @@ const PosterBig = ({ type, poster, index, slideNumber }) => {
                 </div>
             );
         default:
-            return;
+            return null;
     }
 };
 
