@@ -10,8 +10,9 @@ const MainCarousel = () => {
     return (
         <div className="main-carousel">
             <div className="main-carousel__left">
-                <PosterBig type="main" poster={HERO_GAMES[0].posterBig} index="0" slideNumber={currentSlide} />
-                <PosterBig type="main" poster={HERO_GAMES[1].posterBig} index="1" slideNumber={currentSlide} />
+                {HERO_GAMES.map((game, i) => (
+                    <PosterBig type="main" poster={game.posterBig} index={i} slideNumber={currentSlide} />
+                ))}
             </div>
             <div className="main-carousel__right"></div>
         </div>
