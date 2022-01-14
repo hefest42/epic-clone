@@ -1,15 +1,13 @@
 import React from "react";
 
-const PosterBig = ({ type, poster }) => {
+const PosterBig = ({ type, poster, index, slideNumber }) => {
     switch (type) {
         case "main":
             return (
                 <div
-                    className="poster-big"
+                    className="poster-big poster-big__main"
                     style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
+                        transform: `translateX(${(+index - slideNumber) * 100}%)`,
                     }}
                 >
                     <img src={poster} alt="poster" />
