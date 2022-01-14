@@ -24,8 +24,8 @@ const HeroCarousel = () => {
                     return (
                         <div
                             key={i}
-                            className={i === currentSlide ? "active-poster active-poster-fill poster-right" : "poster-right"}
-                            style={{ backgroundColor: `${i === currentSlide ? "rgba(46, 46, 46, 0.400)" : ""}` }}
+                            className={i === currentSlide ? "poster-small poster-small__active" : "poster-small"}
+                            style={{ backgroundColor: `${i === currentSlide ? "rgba(75, 75, 75, 0.4)" : ""}` }}
                             onClick={() => setCurrentSlide(i)}
                         >
                             <div>
