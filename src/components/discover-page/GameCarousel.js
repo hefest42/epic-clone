@@ -2,6 +2,8 @@ import React from "react";
 
 import MediumPoster from "./MediumPoster";
 
+import { GAMES_ON_SALE } from "../../dummy-server/DUMMY_GAMES";
+
 const GameCarousel = () => {
     return (
         <div className="game-carousel__container">
@@ -18,13 +20,9 @@ const GameCarousel = () => {
             </div>
 
             <div className="game-carousel__bottom">
-                <MediumPoster />
-                <MediumPoster />
-                <MediumPoster />
-                <MediumPoster />
-                <MediumPoster />
-                <MediumPoster />
-                <MediumPoster />
+                {GAMES_ON_SALE.map((game, i) => (
+                    <MediumPoster key={i} poster={game.poster} title={game.name} price={game.price} discount={game.discount} index={i} />
+                ))}
             </div>
         </div>
     );
