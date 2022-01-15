@@ -4,6 +4,12 @@
 @import "./posters.scss";
 @import "./store-page.scss";
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Electrolize", sans-serif;
     background-color: rgb(18, 18, 18);

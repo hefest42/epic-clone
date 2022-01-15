@@ -1,10 +1,11 @@
 import React from "react";
 
-const PosterBig = ({ type, poster, releaseDate, index, slideNumber }) => {
-    const currentDate = new Date();
-    const gameReleaseDate = new Date(releaseDate);
+import BuyNowButton from "./BuyNowButton";
 
-    console.log(gameReleaseDate);
+const PosterBig = ({ type, game, index, slideNumber }) => {
+    const currentDate = new Date();
+    const gameReleaseDate = new Date(game.releaseDate);
+    const dateCheck = currentDate > gameReleaseDate;
 
     switch (type) {
         case "main":
@@ -15,9 +16,18 @@ const PosterBig = ({ type, poster, releaseDate, index, slideNumber }) => {
                         transform: `translateX(${(+index - slideNumber) * 100}%)`,
                     }}
                 >
-                    <img src={poster} alt="poster" />
+                    <img src={game.posterBig} alt="poster" />
+
                     <div className="poster-big__cover">
-                        <div></div>
+                        <div className="poster-big__information">
+                            <div className="poster-big__information-top">
+                                <h4>{dateCheck ? "Out Now" : `Coming ${gameReleaseDate.getDate()}/${gameReleaseDate.getMonth() + 1}`}</h4>
+                                <p>{game.shortDescription}</p>
+                            </div>
+                            <div className="poster-big__information-bottom">
+                                <BuyNowButton text={dateCheck ? "BUY NOW" : "PRE-PURCHASE NOW"} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             );
@@ -25,7 +35,7 @@ const PosterBig = ({ type, poster, releaseDate, index, slideNumber }) => {
         case "featured":
             return (
                 <div className="poster-big">
-                    <img src={poster} alt="poster" />
+                    <img src={game.posterBig} alt="poster" />
                 </div>
             );
         default:
