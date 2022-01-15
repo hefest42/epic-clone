@@ -1,5 +1,5 @@
 .store-container {
-    background-color: teal;
+    // background-color: teal;
     width: 100%;
     height: auto;
 
@@ -19,7 +19,7 @@
         position: relative;
         width: 70rem;
         height: 100%;
-        // overflow: hidden;
+        overflow: hidden;
 
         display: flex;
     }
@@ -27,6 +27,10 @@
     &__right {
         width: 18rem;
         height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
 

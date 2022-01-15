@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import PosterBig from "../../UI/PosterBig";
+import PosterSmall from "../../UI/PosterSmall";
 
 import { HERO_GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -14,7 +15,11 @@ const MainCarousel = () => {
                     <PosterBig key={i} type="main" game={game} index={i} slideNumber={currentSlide} />
                 ))}
             </div>
-            <div className="main-carousel__right"></div>
+            <div className="main-carousel__right">
+                {HERO_GAMES.map((game, i) => (
+                    <PosterSmall key={i} type="hero" game={game} index={i} slideNumber={currentSlide} />
+                ))}
+            </div>
         </div>
     );
 };

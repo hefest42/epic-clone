@@ -1,6 +1,6 @@
 .poster-small {
     border-radius: 10px;
-
+    color: white;
     display: flex;
     align-items: center;
 
@@ -35,7 +35,6 @@
 }
 
 .poster-small__active {
-    display: block;
     background: linear-gradient(to right, rgba(61, 61, 61, 0.7) 50%, transparent 0);
     background-size: 200% 100%;
     background-position: right;
@@ -137,6 +136,7 @@
 // WISHLIST BUTTOn
 .wishlist-button__big {
     background-color: transparent;
+    color: white;
     width: 9rem;
     height: 2.5rem;
     border: none;
@@ -150,6 +150,7 @@
 
     &:hover {
         background-color: white;
+        color: black;
     }
 
     span {
