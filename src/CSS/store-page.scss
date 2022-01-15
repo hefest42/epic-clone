@@ -1,0 +1,54 @@
+.store-container {
+    // background-color: teal;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-carousel {
+    width: 90rem;
+    height: 42rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+        position: relative;
+        width: 70rem;
+        height: 100%;
+        overflow: hidden;
+
+        display: flex;
+    }
+
+    &__right {
+        width: 18rem;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-carousel {
+        width: 55rem;
+        height: 27rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        &__left {
+            width: 43rem;
+        }
+
+        &__right {
+            width: 10.5rem;
+            height: 100%;
+        }
+    }
+}

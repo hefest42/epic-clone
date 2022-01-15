@@ -61,6 +61,7 @@ header {
             cursor: pointer;
         }
 
+        // RE WORK THE HTML AND CSS
         &__dropdown {
             position: absolute;
             top: 100%;
@@ -92,5 +93,41 @@ header {
                 }
             }
         }
+    }
+}
+
+// SUB HEADER
+.subheader-container {
+    color: #ccc;
+    width: 75%;
+    height: 6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subheader-left,
+.subheader-right {
+    display: flex;
+
+    a {
+        color: #ccc;
+        text-decoration: none;
+        margin-left: 1.5rem;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    .subheader-link__active {
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .subheader-container {
+        width: 55rem;
     }
 }

@@ -1,13 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import HomePage from "./components/home-page/HomePage";
+import StorePage from "./components/store-page/StorePage";
+import Header from "./components/header/Header";
 
 function App() {
     return (
         <div>
+            <Header />
             <Routes>
                 <Route path="" element={<Navigate to="/store" />} />
-                <Route path="/store/*" element={<HomePage />} />
+                <Route path="/store/*" element={<StorePage />} />
             </Routes>
         </div>
     );

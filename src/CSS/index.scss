@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
 
-@import "./header-css.scss";
-@import "./home-page.scss";
-@import "./discover-page.scss";
+@import "./header.scss";
+@import "./posters.scss";
+@import "./store-page.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "Electrolize", sans-serif;
