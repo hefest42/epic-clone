@@ -2,8 +2,9 @@ import godOfWarBigPoster from "../game-posters/hero-god-of-war-big.jpg";
 import godOfWarSmallPoster from "../game-posters/god-of-war-small.jpg";
 import farCryBigPoster from "../game-posters/hero-far-cry-big.webp";
 import farCrySmallPoster from "../game-posters/far-cry-small.png";
-import genshinImpactSmallPoster from "../game-posters/genshin-small.jpg";
-// import genshinImpactBigPoster from "../game-posters/"
+import sifuBigPoster from "../game-posters/sifu-big.jpg";
+import sifuSmallPoster from "../game-posters/sifu-small.jpg";
+
 import narakaBigPoster from "../game-posters/hero-naraka-big.webp";
 import narakaSmallPoster from "../game-posters/naraka-small.jpg";
 import rainbowExtractionBigPoster from "../game-posters/hero-rainbow-extraction-big.webp";
@@ -39,11 +40,11 @@ export const HERO_GAMES = [
         shortDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad necessitatibus tenetur similique officiis, quidem ab?",
     },
     {
-        name: "Genshin Impact",
-        posterBig: "",
-        posterSmall: genshinImpactSmallPoster,
-        price: null,
-        releaseDate: "2020.09.28",
+        name: "Sifu",
+        posterBig: sifuBigPoster,
+        posterSmall: sifuSmallPoster,
+        price: "39.99",
+        releaseDate: "2022.02.08",
         shortDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad necessitatibus tenetur similique officiis, quidem ab?",
     },
     {
