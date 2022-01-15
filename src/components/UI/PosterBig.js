@@ -1,6 +1,7 @@
 import React from "react";
 
 import BuyNowButton from "./BuyNowButton";
+import WishlistButton from "./WishlistButton";
 
 const PosterBig = ({ type, game, index, slideNumber }) => {
     const currentDate = new Date();
@@ -26,6 +27,7 @@ const PosterBig = ({ type, game, index, slideNumber }) => {
                             </div>
                             <div className="poster-big__information-bottom">
                                 <BuyNowButton text={dateCheck ? "BUY NOW" : "PRE-PURCHASE NOW"} />
+                                <WishlistButton type="big" />
                             </div>
                         </div>
                     </div>
