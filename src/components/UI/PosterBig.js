@@ -1,6 +1,11 @@
 import React from "react";
 
-const PosterBig = ({ type, poster, index, slideNumber }) => {
+const PosterBig = ({ type, poster, releaseDate, index, slideNumber }) => {
+    const currentDate = new Date();
+    const gameReleaseDate = new Date(releaseDate);
+
+    console.log(gameReleaseDate);
+
     switch (type) {
         case "main":
             return (
