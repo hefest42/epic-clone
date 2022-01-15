@@ -47,6 +47,26 @@
     }
 }
 
+// MEDIUM POSTER
+
+.medium-poster {
+    position: absolute;
+    left: 0;
+    width: 14rem;
+    height: 25rem;
+
+    &__image {
+        width: 100%;
+        height: 18rem;
+        object-fit: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 // BIG POSTERS
 
 .poster-big {
