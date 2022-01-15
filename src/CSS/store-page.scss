@@ -41,7 +41,7 @@
     width: 90rem;
     height: 27rem;
     margin-top: 4rem;
-    overflow: hidden;
+    // overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -63,8 +63,15 @@
     }
 
     &__bottom {
+        background-color: tomato;
+        position: absolute;
+        left: 0;
+        top: 5%;
         margin-top: 1rem;
+        width: 100rem;
         height: 25rem;
+
+        display: flex;
     }
 }
 
