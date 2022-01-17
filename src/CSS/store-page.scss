@@ -36,7 +36,6 @@
 
 .games-carousel {
     position: relative;
-    background-color: teal;
     color: #fff;
     width: 90rem;
     height: 27rem;
@@ -60,18 +59,30 @@
                 margin-left: 0.5rem;
             }
         }
+
+        &-buttons {
+            margin-right: 0.5rem;
+        }
     }
 
     &__bottom {
-        background-color: tomato;
-        position: absolute;
-        left: 0;
-        top: 5%;
+        position: relative;
         margin-top: 1rem;
-        width: 100rem;
+        width: 90rem;
         height: 25rem;
+        overflow: hidden;
 
         display: flex;
+
+        &-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;
+            height: 100%;
+
+            display: flex;
+        }
     }
 }
 

@@ -12,16 +12,18 @@ const GamesCarousel = ({ title }) => {
                     <h3>{title}</h3>
                     <span>{">"}</span>
                 </div>
-                <div>
+                <div className="games-carousel__top-buttons">
                     <button>{"<"}</button>
                     <button>{">"}</button>
                 </div>
             </div>
 
             <div className="games-carousel__bottom">
-                {GAMES_ON_SALE.map((game, i) => (
-                    <PosterMedium game={game} index={i} />
-                ))}
+                <div className="games-carousel__bottom-container">
+                    {GAMES_ON_SALE.map((game, i) => (
+                        <PosterMedium game={game} index={i} />
+                    ))}
+                </div>
             </div>
         </div>
     );
