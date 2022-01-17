@@ -15,7 +15,7 @@ const Discover = () => {
             <GamesCarousel title="Games On Sale" GAMES={GAMES_ON_SALE} />
             <FeaturedGames GAMES={HERO_GAMES} />
             <FreeGames GAMES={HERO_GAMES} />
-            <NewTopComing GAMES={GAMES_ON_SALE} />
+            <NewTopComing GAMES={HERO_GAMES} />
         </Fragment>
     );
 };
