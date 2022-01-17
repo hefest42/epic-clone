@@ -22,7 +22,14 @@ const PosterSmall = ({ type, game, index, slideNumber }) => {
             );
 
         default:
-            return null;
+            return (
+                <div className="poster-small small-poster__size1">
+                    <div>
+                        <img src={game.posterSmall} alt="test" />
+                        <p>{game.name}</p>
+                    </div>
+                </div>
+            );
     }
 };
 
