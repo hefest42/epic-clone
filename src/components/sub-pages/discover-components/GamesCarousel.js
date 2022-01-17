@@ -21,7 +21,7 @@ const GamesCarousel = ({ title }) => {
             <div className="games-carousel__bottom">
                 <div className="games-carousel__bottom-container">
                     {GAMES_ON_SALE.map((game, i) => (
-                        <PosterMedium game={game} index={i} />
+                        <PosterMedium key={i} game={game} index={i} />
                     ))}
                 </div>
             </div>
