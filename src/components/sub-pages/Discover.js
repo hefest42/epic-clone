@@ -13,7 +13,7 @@ const Discover = () => {
             <MainCarousel GAMES={HERO_GAMES} />
             <GamesCarousel title="Games On Sale" GAMES={GAMES_ON_SALE} />
             <FeaturedGames GAMES={HERO_GAMES} />
-            <FreeGames />
+            <FreeGames GAMES={HERO_GAMES} />
         </Fragment>
     );
 };
