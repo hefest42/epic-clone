@@ -2,9 +2,7 @@ import React from "react";
 
 import PosterMedium from "../../UI/PosterMedium";
 
-import { GAMES_ON_SALE } from "../../../dummy-server/DUMMY_GAMES";
-
-const GamesCarousel = ({ title }) => {
+const GamesCarousel = ({ title, GAMES }) => {
     return (
         <div className="games-carousel">
             <div className="games-carousel__top">
@@ -20,7 +18,7 @@ const GamesCarousel = ({ title }) => {
 
             <div className="games-carousel__bottom">
                 <div className="games-carousel__bottom-container">
-                    {GAMES_ON_SALE.map((game, i) => (
+                    {GAMES.map((game, i) => (
                         <PosterMedium key={i} game={game} index={i} />
                     ))}
                 </div>
