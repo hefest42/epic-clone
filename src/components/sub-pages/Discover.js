@@ -6,6 +6,7 @@ import FeaturedGames from "./discover-components/FeaturedGames";
 import FreeGames from "./discover-components/FreeGames";
 import NewTopComing from "./discover-components/NewTopComing";
 import BrowseFeatureBottom from "./discover-components/BrowseFeatureBottom";
+import Footer from "../header-footer/Footer";
 
 import { HERO_GAMES } from "../../dummy-server/DUMMY_GAMES";
 
@@ -27,6 +28,7 @@ const Discover = () => {
             <GamesCarousel title="Recently Updated" GAMES={HERO_GAMES} />
             <GamesCarousel title="Most Popular" GAMES={HERO_GAMES} />
             <BrowseFeatureBottom />
+            <Footer />
         </Fragment>
     );
 };
