@@ -14,7 +14,7 @@ const PosterSmall = ({ type, game, index, slideNumber }) => {
                         backgroundColor: `${index === slideNumber ? "rgba(75, 75, 75, 0.4)" : ""}`,
                     }}
                 >
-                    <div>
+                    <div className="small-poster__size1-information">
                         <img src={game.posterSmall} alt="test" />
                         <p>{game.name}</p>
                     </div>
@@ -23,10 +23,13 @@ const PosterSmall = ({ type, game, index, slideNumber }) => {
 
         default:
             return (
-                <div className="poster-small small-poster__size1">
+                <div className="poster-small small-poster__size2">
                     <div>
                         <img src={game.posterSmall} alt="test" />
-                        <p>{game.name}</p>
+                        <div className="small-poster__size2-information">
+                            <p>{game.name}</p>
+                            <p>{`$${game.price}`}</p>
+                        </div>
                     </div>
                 </div>
             );

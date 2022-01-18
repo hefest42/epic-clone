@@ -2,27 +2,27 @@ import React from "react";
 
 import PosterBig from "../../UI/PosterBig";
 
-const FeaturedGames = ({ GAMES }) => {
+const FeaturedGames = ({ firstGame, secondGame }) => {
     return (
         <div className="featured-games">
             <div className="featured-games__left">
                 <div className="featured-games__poster">
-                    <PosterBig type="featured" game={GAMES[3]} />
+                    <PosterBig type="featured" game={firstGame} />
                 </div>
                 <div className="featured-games__info">
-                    <h4>{GAMES[3].name}</h4>
-                    <p>{GAMES[3].shortDescription}</p>
-                    <h4>${GAMES[3].price}</h4>
+                    <h4>{firstGame.name}</h4>
+                    <p>{firstGame.shortDescription}</p>
+                    <h4>${firstGame.price}</h4>
                 </div>
             </div>
             <div className="featured-games__right">
                 <div className="featured-games__poster">
-                    <PosterBig type="featured" game={GAMES[2]} />
+                    <PosterBig type="featured" game={secondGame} />
                 </div>
                 <div className="featured-games__info">
-                    <h4>{GAMES[2].name}</h4>
-                    <p>{GAMES[2].shortDescription}</p>
-                    <h4>${GAMES[2].price}</h4>
+                    <h4>{secondGame.name}</h4>
+                    <p>{secondGame.shortDescription}</p>
+                    <h4>${secondGame.price}</h4>
                 </div>
             </div>
         </div>
