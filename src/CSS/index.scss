@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
 
+$main-gray: #2a2a2a;
+$main-blue: #0078f2;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,6 +12,75 @@
 body {
     font-family: "Electrolize", sans-serif;
     background-color: rgb(18, 18, 18);
-    margin: 0;
-    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 3rem;
+    background-color: $main-gray;
+
+    display: flex;
+    justify-content: space-between;
+
+    .header-left {
+        width: auto;
+        height: 100%;
+        margin-left: 3.5rem;
+        font-size: 0.7rem;
+
+        display: flex;
+        align-items: flex-start;
+
+        &__link {
+            color: #ccc;
+            width: 4rem;
+            height: 100%;
+            text-decoration: none;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            &-top {
+                width: 100%;
+                height: 90%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-down {
+                width: 100%;
+                height: 10%;
+            }
+
+            &:last-child {
+                width: 8rem;
+            }
+
+            &:hover {
+                color: #fff;
+                .header-left__link {
+                    &-down {
+                        background-color: $main-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .link-active {
+        color: #fff;
+
+        .header-left__link {
+            &-down {
+                background-color: $main-blue;
+            }
+        }
+    }
+
+    .header-right {
+        background-color: peru;
+    }
 }
