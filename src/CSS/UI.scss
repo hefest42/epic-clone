@@ -240,6 +240,15 @@
 }
 
 @media only screen and (max-width: 1000px) {
+    .small-poster__size1 {
+        width: 100%;
+        height: 4rem;
+    }
+
+    .small-poster__size2 {
+        height: 6rem;
+    }
+
     .medium-poster {
         width: 12rem;
         height: 20rem;

@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // FIX SIGN OUT
-const AccountDropdownMenu = () => {
+const AccountDropdownMenu = ({ mouseLeaveFn }) => {
     return (
-        <div className="header-right__dropdown">
+        <div className="header-right__dropdown" onMouseLeave={mouseLeaveFn}>
             <ul>
                 <Link to="/account">
                     <li>ACCOUNT </li>

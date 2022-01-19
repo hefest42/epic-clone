@@ -10,14 +10,15 @@ header {
 
     a {
         position: relative;
-        height: 90%;
+        min-height: 98%;
+        max-height: 98%;
         color: #ccc;
         text-decoration: none;
         padding: 0 1rem;
 
         p {
             position: relative;
-            top: 15%;
+            margin-top: 18px;
         }
     }
 
@@ -41,8 +42,10 @@ header {
         align-items: center;
 
         &__user {
+            position: relative;
             width: 7rem;
             height: 100%;
+            z-index: 120;
             cursor: pointer;
 
             display: flex;
@@ -52,7 +55,7 @@ header {
 
         button {
             background-color: #0078f2;
-            color: #ccc;
+            color: #fff;
             width: 7rem;
             height: 100%;
             font-size: 0.7rem;
@@ -61,21 +64,21 @@ header {
             cursor: pointer;
         }
 
-        // RE WORK THE HTML AND CSS
         &__dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0%;
             background-color: #2a2a2a;
+            position: absolute;
+            top: 0;
+            left: 0%;
             width: 7rem;
-            height: auto;
+            height: 15rem;
             text-align: center;
+            z-index: 110;
 
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
 
             ul {
-                margin: 0 auto 0 auto;
+                margin: 2.5rem auto 0 auto;
                 padding: 1rem 0;
 
                 list-style: none;
