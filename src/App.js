@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import StorePage from "./components/store-page/StorePage";
-import Header from "./components/header/Header";
+import Header from "./components/header-footer/Header";
 
 function App() {
     return (

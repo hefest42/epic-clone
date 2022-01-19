@@ -2,35 +2,35 @@ import React from "react";
 
 import PosterSmall from "../../UI/PosterSmall";
 
-const NewTopComing = ({ GAMES }) => {
+const NewTopComing = ({ newGames, topGames, comingGames }) => {
     return (
         <div className="newtopcoming">
-            <div className="new-container">
-                <div>
+            <div className="newtopcoming-games">
+                <div className="newtopcoming-title">
                     <h4>New Releases</h4>
                     <button>View More</button>
                 </div>
-                {GAMES.map((game, i) => (
+                {newGames.map((game, i) => (
                     <PosterSmall key={i} game={game} index={i} />
                 ))}
             </div>
 
-            <div className="top-container">
-                <div>
+            <div className="newtopcoming-games">
+                <div className="newtopcoming-title">
                     <h4>New Releases</h4>
                     <button>View More</button>
                 </div>
-                {GAMES.map((game, i) => (
+                {topGames.map((game, i) => (
                     <PosterSmall key={i} game={game} index={i} />
                 ))}
             </div>
 
-            <div className="coming-container">
-                <div>
+            <div className="newtopcoming-games">
+                <div className="newtopcoming-title">
                     <h4>New Releases</h4>
                     <button>View More</button>
                 </div>
-                {GAMES.map((game, i) => (
+                {comingGames.map((game, i) => (
                     <PosterSmall key={i} game={game} index={i} />
                 ))}
             </div>

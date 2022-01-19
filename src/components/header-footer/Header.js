@@ -7,8 +7,12 @@ import AccountDropdownMenu from "./AccountDropdownMenu";
 const Header = () => {
     const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
+    const headerHandler = () => {
+        setShowDropdownMenu(false);
+    };
+
     return (
-        <header>
+        <header onMouseEnter={headerHandler} onMouseLeave={() => setShowDropdownMenu(false)}>
             <div className="header-left">
                 LOGO
                 <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/store">
@@ -29,7 +33,7 @@ const Header = () => {
                 <div className="header-right__user" onMouseEnter={() => setShowDropdownMenu(true)}>
                     <span>USERNAME</span>
                 </div>
-                {showDropdownMenu && <AccountDropdownMenu />}
+                {showDropdownMenu && <AccountDropdownMenu mouseLeaveFn={() => setShowDropdownMenu(false)} />}
                 <button>DOWNLOAD</button>
             </div>
         </header>
