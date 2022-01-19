@@ -5,7 +5,7 @@ function App() {
         <div>
             <Routes>
                 <Route path="" element={<Navigate to="/store" />} />
-                <Route path="/store/*" element={<StorePage />} />
+                <Route path="/store/*" element={<p>start</p>} />
             </Routes>
         </div>
     );
