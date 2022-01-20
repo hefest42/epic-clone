@@ -5,8 +5,52 @@
     margin: 0 auto;
 }
 
+section {
+    width: 90rem;
+    margin-top: 2rem;
+}
+
+.hero {
+    background-color: peru;
+    height: 40rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+        position: relative;
+        width: 78%;
+        height: 100%;
+        overflow: hidden;
+
+        display: flex;
+    }
+
+    &-right {
+        background-color: teal;
+        width: 20%;
+        height: 100%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
+    section {
+        width: 55rem;
+    }
+
     .store {
         width: 55rem;
+    }
+
+    .hero {
+        height: 27rem;
+
+        &-left {
+            width: 82%;
+        }
+
+        &-right {
+            width: 17%;
+        }
     }
 }

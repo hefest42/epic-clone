@@ -21,7 +21,7 @@ import warshmallowsMediumPoster from "../game-posters/warshmallows-medium.jfif";
 import cobraKaiMediumPoster from "../game-posters/cobra-kai-medium.webp";
 import suchArtMediumPoster from "../game-posters/such-art-medium.jfif";
 
-export const HERO_GAMES = [
+export const GAMES = [
     {
         name: "God of War",
         releaseDate: "2022.01.14",

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 import Header from "../../header-footer/Header";
 import SubHeader from "../../header-footer/SubHeader";
+import HeroCarousel from "./HeroCarousel";
 
 const StorePage = () => {
     return (
@@ -10,6 +11,7 @@ const StorePage = () => {
 
             <div className="store">
                 <SubHeader />
+                <HeroCarousel />
             </div>
         </Fragment>
     );
