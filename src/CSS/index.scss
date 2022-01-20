@@ -14,10 +14,12 @@ body {
     background-color: rgb(18, 18, 18);
 }
 
+// HEADER
 header {
+    background-color: $main-gray;
     width: 100%;
     height: 3rem;
-    background-color: $main-gray;
+    font-size: 0.7rem;
 
     display: flex;
     justify-content: space-between;
@@ -26,7 +28,6 @@ header {
         width: auto;
         height: 100%;
         margin-left: 3.5rem;
-        font-size: 0.7rem;
 
         display: flex;
         align-items: flex-start;
@@ -48,6 +49,10 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                span {
+                    margin-top: 3px;
+                }
             }
 
             &-down {
@@ -81,6 +86,89 @@ header {
     }
 
     .header-right {
-        background-color: peru;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+
+        &__language {
+            width: 4rem;
+            height: 100%;
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                width: 25px;
+                height: 25px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 22px;
+            }
+        }
+
+        &__account {
+            position: relative;
+            width: 8rem;
+            height: 100%;
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: $main-blue;
+            color: #fff;
+            width: 7rem;
+            height: 100%;
+            font-size: 0.7rem;
+            border: none;
+            cursor: pointer;
+        }
     }
 }
+
+.account-dropdown {
+    background-color: $main-gray;
+    width: 8rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+
+    position: absolute;
+    top: 3rem;
+    right: 7rem;
+    z-index: 500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        color: #ccc;
+        font-size: 0.7rem;
+        padding: 0.4rem 0;
+        cursor: pointer;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    a {
+        color: #ccc;
+        font-size: 0.7rem;
+        text-decoration: none;
+        margin: 0.4rem 0;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+////////////////////////////////////////////////////////////
