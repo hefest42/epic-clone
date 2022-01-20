@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import StorePage from "./components/Pages/StorePage";
+import StorePage from "./components/Pages/store-page/StorePage";
 
 function App() {
     return (
