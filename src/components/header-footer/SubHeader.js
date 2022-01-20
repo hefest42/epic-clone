@@ -14,7 +14,7 @@ const SubHeader = () => {
     console.log(stickySubHeader);
 
     return (
-        <div className="subheader">
+        <div className={`${stickySubHeader ? "subheader subheader-sticky" : "subheader"}`}>
             <div className="subheader-left">
                 <form action="">
                     <span>&#128269;</span>
