@@ -1,12 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import Header from "../header-footer/Header";
+import SubHeader from "../header-footer/SubHeader";
 
 const StorePage = () => {
     return (
-        <div>
+        <Fragment>
             <Header />
-        </div>
+
+            <div className="store">
+                <SubHeader />
+            </div>
+        </Fragment>
     );
 };
 
