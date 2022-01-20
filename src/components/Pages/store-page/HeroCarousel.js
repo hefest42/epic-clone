@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Poster from "../../UI/Poster";
+import HorizontalPoster from "../../UI/HorizontalPoster";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -15,7 +16,11 @@ const HeroCarousel = () => {
                     <Poster key={i} poster={game.posterBig} index={i} slideNumber={currentSlide} />
                 ))}
             </div>
-            <div className="hero-right"></div>
+            <div className="hero-right">
+                <div className="hero-right__container">
+                    <HorizontalPoster game={GAMES[0]} />
+                </div>
+            </div>
         </section>
     );
 };
