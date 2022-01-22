@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Poster from "../../UI/Poster";
 import HorizontalPoster from "../../UI/HorizontalPoster";
@@ -22,7 +22,7 @@ const HeroCarousel = () => {
 
     const slideHandler = (slide, name) => {
         if (slide === currentSlide) {
-            const linkName = name.split(" ").join("-").toLowerCase();
+            const linkName = name.replace(":", "").split(" ").join("-").toLowerCase();
 
             navigate(`p/${linkName}`);
         } else setCurrentSlide(slide);
@@ -32,7 +32,9 @@ const HeroCarousel = () => {
         <section className="hero">
             <div className="hero-left">
                 {heroGames.map((game, i) => (
-                    <Poster key={i} poster={game.posterBig} index={i} slideNumber={currentSlide} />
+                    <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
+                        <Poster game={game} index={i} slideNumber={currentSlide} cover={true} />
+                    </Link>
                 ))}
             </div>
 
