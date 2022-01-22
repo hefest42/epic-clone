@@ -75,6 +75,76 @@ section {
     }
 }
 
+///////////////////////////////////////////////////////////////////////////
+
+.game-carousel {
+    height: 33rem;
+
+    &__title {
+        width: 100%;
+        height: 10%;
+        color: #fff;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-left {
+            display: flex;
+
+            span {
+                margin-left: 1rem;
+            }
+        }
+
+        &-right {
+            display: flex;
+
+            button {
+                background-color: $secondary-gray;
+                color: #ccc;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: none;
+                margin-left: 0.5rem;
+                font-size: 1rem;
+                cursor: pointer;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: $main-gray;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__container {
+        height: 100%;
+    }
+
+    &__poster {
+        position: relative;
+        background-color: peru;
+        width: 15rem;
+        height: 90%;
+
+        &-top {
+            position: relative;
+            background-color: rebeccapurple;
+            width: 100%;
+            height: 67%;
+        }
+
+        &-bottom {
+        }
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     section {
         width: 55rem;

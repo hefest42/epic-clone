@@ -33,7 +33,7 @@ const HeroCarousel = () => {
             <div className="hero-left">
                 {heroGames.map((game, i) => (
                     <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
-                        <Poster game={game} index={i} slideNumber={currentSlide} cover={true} />
+                        <Poster poster={game.posterBig} game={game} index={i} slideNumber={currentSlide} cover={true} />
                     </Link>
                 ))}
             </div>

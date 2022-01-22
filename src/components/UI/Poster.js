@@ -2,13 +2,13 @@ import React from "react";
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-const Poster = ({ game, index, slideNumber, cover }) => {
+const Poster = ({ poster, game, index, slideNumber, cover }) => {
     const currentDate = new Date();
     const gameReleaseDate = new Date(game.releaseDate);
 
     return (
         <div className="poster" style={{ transform: `translateX(${(index - slideNumber) * 100}%)` }}>
-            <img src={game.posterBig} alt="" />
+            <img src={poster} alt="" />
 
             {cover && (
                 <div className="poster-cover">
