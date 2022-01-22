@@ -11,8 +11,6 @@ const SubHeader = () => {
         }
     }, []);
 
-    console.log(stickySubHeader);
-
     return (
         <div className={`${stickySubHeader ? "subheader subheader-sticky" : "subheader"}`}>
             <div className="subheader-left">
