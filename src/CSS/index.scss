@@ -253,8 +253,10 @@ header {
 }
 
 .subheader-sticky {
+    background-color: rgb(18, 18, 18);
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 @media only screen and (max-width: 1000px) {

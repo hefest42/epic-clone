@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import Poster from "../../UI/Poster";
 import HorizontalPoster from "../../UI/HorizontalPoster";
 
@@ -8,6 +10,7 @@ import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 const HeroCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const heroGames = GAMES.filter(game => game.gameFeatured === true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -16,6 +19,14 @@ const HeroCarousel = () => {
 
         return () => clearInterval(timer);
     }, [currentSlide, heroGames.length]);
+
+    const slideHandler = (slide, name) => {
+        if (slide === currentSlide) {
+            const linkName = name.split(" ").join("-").toLowerCase();
+
+            navigate(`p/${linkName}`);
+        } else setCurrentSlide(slide);
+    };
 
     return (
         <section className="hero">
@@ -33,7 +44,7 @@ const HeroCarousel = () => {
                         style={{
                             backgroundColor: `${i === currentSlide ? "#2a2a2a8f" : ""}`,
                         }}
-                        onClick={() => setCurrentSlide(i)}
+                        onClick={() => slideHandler(i, game.name)}
                     >
                         <HorizontalPoster game={game} showPrice={false} index={i} />
                     </div>
