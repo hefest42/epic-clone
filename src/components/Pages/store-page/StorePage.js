@@ -6,6 +6,7 @@ import Header from "../../header-footer/Header";
 import SubHeader from "../../header-footer/SubHeader";
 import HeroCarousel from "./HeroCarousel";
 import GameCarousel from "./GameCarousel";
+import FeaturedGames from "./FeaturedGames";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -25,6 +26,10 @@ const StorePage = () => {
                             <SubHeader />
                             <HeroCarousel games={heroGames} />
                             <GameCarousel games={gamesOnSale} />
+                            <FeaturedGames
+                                firstGame={GAMES.find(game => game.name === "STRANGER OF PARADISE FINAL FANTASY ORIGIN")}
+                                secondGame={GAMES.find(game => game.name === "Rocket League")}
+                            />
                         </div>
                     }
                 />
