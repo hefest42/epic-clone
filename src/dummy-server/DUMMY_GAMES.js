@@ -10,6 +10,8 @@ import rainbowExtractionBigPoster from "../game-posters/hero-rainbow-extraction-
 import rainbowExtractionSmallPoster from "../game-posters/rainbow-extraction-small.jpg";
 import kenaBigPoster from "../game-posters/hero-kena-big.jpg";
 import kenaSmallPoster from "../game-posters/kena-small.png";
+import strangerOfParadiseBig from "../game-posters/stranger-of-paradise-big.jpg";
+import rocketLeagueBig from "../game-posters/rocket-league-big.jpg";
 
 // GAMES ON SALE
 import deadCellsMediumPoster from "../game-posters/dead-cells-medium.jpg";
@@ -175,6 +177,30 @@ export const GAMES = [
         price: "19.99",
         discount: "20",
         gameOnSale: true,
+        gameFeatured: false,
+    },
+    {
+        name: "STRANGER OF PARADISE FINAL FANTASY ORIGIN",
+        studio: "Square Enix",
+        releaseDate: "2022.03.18",
+        posterBig: strangerOfParadiseBig,
+        posterSmall: null,
+        shortDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum quia facere quibusdam atque vel.",
+        price: "59.99",
+        discount: null,
+        gameOnSale: false,
+        gameFeatured: false,
+    },
+    {
+        name: "Rocket League",
+        studio: "Psyonix LLC",
+        releaseDate: "2020.09.23",
+        posterBig: rocketLeagueBig,
+        posterSmall: null,
+        shortDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum quia facere quibusdam atque vel.",
+        price: null,
+        discount: null,
+        gameOnSale: false,
         gameFeatured: false,
     },
 ];
