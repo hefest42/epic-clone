@@ -7,7 +7,12 @@ import SubHeader from "../../header-footer/SubHeader";
 import HeroCarousel from "./HeroCarousel";
 import GameCarousel from "./GameCarousel";
 
+import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
+
 const StorePage = () => {
+    const heroGames = GAMES.filter(game => game.gameFeatured === true);
+    const gamesOnSale = GAMES.filter(game => game.gameOnSale === true);
+
     return (
         <Fragment>
             <Header />
@@ -18,8 +23,8 @@ const StorePage = () => {
                     element={
                         <div className="store">
                             <SubHeader />
-                            <HeroCarousel />
-                            <GameCarousel />
+                            <HeroCarousel games={heroGames} />
+                            <GameCarousel games={gamesOnSale} />
                         </div>
                     }
                 />

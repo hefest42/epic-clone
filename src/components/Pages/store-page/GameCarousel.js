@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Poster from "../../UI/Poster";
+const GameCarousel = ({ games }) => {
+    const [moveCarouselByAmount, setMoveCarouselByAmount] = useState(0);
 
-import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
+    const calcDiscount = (price, discount) => {
+        return (price * (100 - discount)) / 100;
+    };
 
-const GameCarousel = () => {
+    const moveCarouselRight = () => {
+        const amount = games.length % 6;
+
+        if (amount <= 6) {
+            setMoveCarouselByAmount(-amount * 15);
+        }
+
+        console.log(amount);
+        console.log(moveCarouselByAmount);
+    };
+
+    const moveCarouselLeft = () => {
+        if (moveCarouselByAmount <= 6) setMoveCarouselByAmount(0);
+    };
+
     return (
         <section className="game-carousel">
             <div className="game-carousel__title">
@@ -13,21 +30,28 @@ const GameCarousel = () => {
                     <span>&#x203A;</span>
                 </div>
                 <div className="game-carousel__title-right">
-                    <button>&#x2039;</button>
-                    <button>&#x203A;</button>
+                    <button onClick={moveCarouselLeft}>&#x2039;</button>
+                    <button onClick={moveCarouselRight}>&#x203A;</button>
                 </div>
             </div>
 
-            <div className="game-carousel__container">
-                <div className="game-carousel__poster">
-                    <div className="game-carousel__poster-top">
-                        <Poster poster={GAMES[0].posterSmall} game={GAMES[0]} index={0} slideNumber={0} cover={false} />
-                    </div>
+            <div className="game-carousel__container" style={{ transform: `translateX(${moveCarouselByAmount}rem)` }}>
+                {games.map((game, i) => (
+                    <div className="game-carousel__poster" key={i}>
+                        <div className="game-carousel__poster-top">
+                            <img src={game.posterSmall} alt={`${game.name} poster`} />
+                        </div>
 
-                    <div className="game-carousel__poster-bottom">
-                        <h4>game</h4>
+                        <div className="game-carousel__poster-bottom">
+                            <h4>{game.name}</h4>
+                            <div>
+                                <span>-{game.discount}%</span>
+                                <span>${game.price}</span>
+                                <span>${calcDiscount(game.price, game.discount).toFixed(2)}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
         </section>
     );
