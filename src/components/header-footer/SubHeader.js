@@ -9,6 +9,8 @@ const SubHeader = () => {
         if (typeof window !== "undefined") {
             window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
         }
+
+        return () => setStickySubHeader(false);
     }, []);
 
     return (
