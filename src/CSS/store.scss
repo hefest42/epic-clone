@@ -193,28 +193,33 @@ section {
 
         &-bottom {
             margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
             color: #fff;
 
-            div {
-                width: 100%;
+            h4 {
                 margin-top: 0.5rem;
-                display: flex;
-                align-items: center;
-
-                :first-child {
-                    background-color: $main-blue;
-                    padding: 0.3rem 0.3rem;
-                }
-
-                :nth-child(2) {
-                    color: $light-gray;
-                    text-decoration: line-through;
-                }
-
-                span {
-                    margin-right: 0.7rem;
-                }
             }
+        }
+    }
+
+    .game-on-sale {
+        width: 100%;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        :first-child {
+            background-color: $main-blue;
+            padding: 0.3rem 0.3rem;
+        }
+
+        :nth-child(2) {
+            color: $light-gray;
+            text-decoration: line-through;
+        }
+
+        span {
+            margin-right: 0.7rem;
         }
     }
 }
@@ -447,6 +452,51 @@ section {
                 &:hover {
                     background-color: $secondary-gray;
                 }
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////
+.discover-feature {
+    height: 30rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__left {
+        height: 100%;
+        width: 65%;
+
+        img {
+            background-color: $main-blue;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    &__right {
+        margin-left: 2rem;
+
+        div {
+            color: #fff;
+            height: 40%;
+
+            h4 {
+                font-size: 2rem;
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+
+            button {
+                padding: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
             }
         }
     }

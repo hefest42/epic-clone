@@ -9,6 +9,7 @@ import GameCarousel from "./GameCarousel";
 import FeaturedGames from "./FeaturedGames";
 import FreeGames from "./FreeGames";
 import NewTopComing from "./NewTopComing";
+import DiscoverBottomFeature from "./DiscoverBottomFeature";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -30,7 +31,7 @@ const StorePage = () => {
                         <div className="store">
                             <SubHeader />
                             <HeroCarousel games={heroGames} />
-                            <GameCarousel games={gamesOnSale} />
+                            <GameCarousel title="Games On Sale" games={gamesOnSale} />
                             <FeaturedGames
                                 firstGame={GAMES.find(game => game.name === "STRANGER OF PARADISE FINAL FANTASY ORIGIN")}
                                 secondGame={GAMES.find(game => game.name === "Rocket League")}
@@ -40,6 +41,13 @@ const StorePage = () => {
                                 secondGame={GAMES.find(game => game.name === "Rainbow Six: Extraction")}
                             />
                             <NewTopComing newReleases={newGames} topSellers={topGames} comingSoon={comingGames} />
+                            <FeaturedGames
+                                firstGame={GAMES.find(game => game.name === "STRANGER OF PARADISE FINAL FANTASY ORIGIN")}
+                                secondGame={GAMES.find(game => game.name === "Rocket League")}
+                            />
+                            <GameCarousel title="Recently Updated" games={GAMES} />
+                            <GameCarousel title="Most Popular" games={GAMES} />
+                            <DiscoverBottomFeature />
                         </div>
                     }
                 />
