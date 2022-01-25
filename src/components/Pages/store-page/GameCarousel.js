@@ -1,14 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 // FIX THE CAROUSEL MOVEMENT
+// 243.2
 const GameCarousel = ({ title, games }) => {
     const [showWishlistButton, setShowWishlistButton] = useState(false);
     const [slideMovementAmount, setSlideMovementAmount] = useState(0);
+    const [slideNumber, setSlideNumber] = useState(1);
 
     const calcDiscount = (price, discount) => {
         return (price * (100 - discount)) / 100;
+    };
+
+    const moveCarouselRight = () => {
+        let posters = 6 * slideNumber;
+
+        if (posters > games.length) return;
+
+        setSlideNumber(state => state + 1);
+
+        if (games.length - posters < 6) {
+            setSlideMovementAmount(state => state + -243.2 * (games.length - posters));
+
+            return;
+        }
+
+        if (games.length > posters) {
+            setSlideMovementAmount(-243.2 * posters);
+        }
     };
 
     return (
@@ -20,11 +40,11 @@ const GameCarousel = ({ title, games }) => {
                 </div>
                 <div className="game-carousel__title-right">
                     <button onClick={() => console.log("test")}>&#x2039;</button>
-                    <button onClick={() => console.log("test")}>&#x203A;</button>
+                    <button onClick={moveCarouselRight}>&#x203A;</button>
                 </div>
             </div>
 
-            <div className="game-carousel__container" style={{ transform: `translateX(${slideMovementAmount}%)` }}>
+            <div className="game-carousel__container" style={{ transform: `translateX(${slideMovementAmount}px)` }}>
                 {games.map((game, i) => (
                     <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
                         <div
