@@ -12,6 +12,7 @@ import kenaBigPoster from "../game-posters/hero-kena-big.jpg";
 import kenaSmallPoster from "../game-posters/kena-small.png";
 import strangerOfParadiseBig from "../game-posters/stranger-of-paradise-big.jpg";
 import rocketLeagueBig from "../game-posters/rocket-league-big.jpg";
+import rocketLeagueSmall from "../game-posters/rocket-league-small.jfif";
 
 // GAMES ON SALE
 import deadCellsMediumPoster from "../game-posters/dead-cells-medium.jpg";
@@ -196,7 +197,7 @@ export const GAMES = [
         studio: "Psyonix LLC",
         releaseDate: "2020.09.23",
         posterBig: rocketLeagueBig,
-        posterSmall: null,
+        posterSmall: rocketLeagueSmall,
         shortDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum quia facere quibusdam atque vel.",
         price: null,
         discount: null,
