@@ -42,11 +42,11 @@ const StorePage = () => {
                             />
                             <NewTopComing newReleases={newGames} topSellers={topGames} comingSoon={comingGames} />
                             <FeaturedGames
-                                firstGame={GAMES.find(game => game.name === "STRANGER OF PARADISE FINAL FANTASY ORIGIN")}
-                                secondGame={GAMES.find(game => game.name === "Rocket League")}
+                                firstGame={GAMES.find(game => game.name === "God of War")}
+                                secondGame={GAMES.find(game => game.name === "Far Cry 6")}
                             />
-                            <GameCarousel title="Recently Updated" games={GAMES} />
-                            <GameCarousel title="Most Popular" games={GAMES} />
+                            <GameCarousel title="Recently Updated" games={GAMES.slice().sort((a, b) => a.name.localeCompare(b.name))} />
+                            <GameCarousel title="Most Popular" games={GAMES.slice().sort((a, b) => a.price - b.price)} />
                             <DiscoverBottomFeature />
                         </div>
                     }
