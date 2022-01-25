@@ -18,9 +18,9 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                         <img src={firstGame.posterBig} alt="" />
                         <div className="poster-cover__white">{showFirstWishlistButton && <button>+</button>}</div>
                     </div>
-                    <h2 className="featured-container__title">{`New from ${firstGame.studio}`}</h2>
+                    <h2 className="featured-container__title">{firstGame.name}</h2>
                 </Link>
-                <div className="featured-container__description">{`Pre-purchase ${firstGame.name} today.`} </div>
+                <div className="featured-container__description">{firstGame.shortDescription} </div>
                 {firstGame.price && <h2 className="featured-container__price">${firstGame.price}</h2>}
             </div>
 
@@ -36,7 +36,7 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                     </div>
                     <h2 className="featured-container__title">{secondGame.name}</h2>
                 </Link>
-                <div className="featured-container__description">{`BMW speeds into ${secondGame.name} for the first time with the fully customizable M240i!`}</div>
+                <div className="featured-container__description">{secondGame.shortDescription}</div>
                 {secondGame.price && <h2 className="featured-container__price">${secondGame.price}</h2>}
             </div>
         </section>
