@@ -33,6 +33,27 @@ $main-link: rgb(140, 140, 140);
     }
 }
 
+.game-on-sale {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    :first-child {
+        background-color: $main-blue;
+        padding: 0.3rem 0.3rem;
+    }
+
+    :nth-child(2) {
+        color: $light-gray;
+        text-decoration: line-through;
+    }
+
+    span {
+        margin-right: 0.7rem;
+    }
+}
+
 .store {
     width: 90rem;
     height: 200vh;
@@ -199,27 +220,6 @@ section {
             h4 {
                 margin-top: 0.5rem;
             }
-        }
-    }
-
-    .game-on-sale {
-        width: 100%;
-        margin-top: 0.5rem;
-        display: flex;
-        align-items: center;
-
-        :first-child {
-            background-color: $main-blue;
-            padding: 0.3rem 0.3rem;
-        }
-
-        :nth-child(2) {
-            color: $light-gray;
-            text-decoration: line-through;
-        }
-
-        span {
-            margin-right: 0.7rem;
         }
     }
 }
