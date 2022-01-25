@@ -258,6 +258,132 @@ section {
     }
 }
 
+.free {
+    background-color: $secondary-gray;
+    height: 35rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    &-title {
+        width: 95%;
+        color: lightgray;
+        margin-top: 2rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: transparent;
+            color: $light-gray;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid $light-gray;
+            border-radius: 5px;
+        }
+    }
+
+    &-posters {
+        width: 95%;
+        height: 90%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-container {
+        width: 49%;
+        height: 90%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &-image {
+        position: relative;
+        width: 100%;
+        height: 80%;
+
+        img {
+            border-radius: 5px;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-info {
+        margin-top: 1rem;
+
+        h4 {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: $light-gray;
+            margin-top: 1rem;
+        }
+    }
+
+    &-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 0.9rem;
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        &__left {
+            background-color: $main-blue;
+            color: #fff;
+            width: 100%;
+            height: 6%;
+            text-align: center;
+            font-weight: bold;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__right {
+            background-color: #000;
+            color: #fff;
+            width: 100%;
+            height: 6%;
+            text-align: center;
+            font-weight: bold;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     section {
         width: 55rem;
@@ -308,6 +434,35 @@ section {
                 margin-left: 1rem;
                 margin-top: 1rem;
                 font-size: 0.9rem;
+            }
+        }
+    }
+
+    .free {
+        height: 25rem;
+
+        &-title {
+            margin-top: 1rem;
+        }
+
+        &-info {
+            margin-top: 1rem;
+
+            h4 {
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            p {
+                margin-top: 0.3rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        &-cover {
+            &__left,
+            &__right {
+                height: 9%;
             }
         }
     }
