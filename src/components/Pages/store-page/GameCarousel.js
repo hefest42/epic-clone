@@ -47,7 +47,7 @@ const GameCarousel = ({ title, games }) => {
                                             <span>${calcDiscount(game.price, game.discount).toFixed(2)}</span>
                                         </div>
                                     ) : (
-                                        <h4 className="game-not-on-sale">${game.price}</h4>
+                                        <h4 className="game-not-on-sale">{game.price ? `$${game.price}` : "Free"}</h4>
                                     )}
                                 </div>
                             </div>
