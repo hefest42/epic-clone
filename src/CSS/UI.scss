@@ -108,6 +108,7 @@ $main-link: rgb(140, 140, 140);
     display: flex;
 
     &__left {
+        position: relative;
         width: 27%;
         height: 100%;
         object-fit: cover;

@@ -219,6 +219,7 @@ section {
     }
 }
 
+///////////////////////////////////////////////////////////////////////////
 .featured {
     height: 35rem;
     color: #fff;
@@ -258,6 +259,7 @@ section {
     }
 }
 
+/////////////////////////////////////////////////////////////////////////
 .free {
     background-color: $secondary-gray;
     height: 35rem;
@@ -384,6 +386,73 @@ section {
     }
 }
 
+/////////////////////////////////////////////////////////////////////////
+.newtopcoming {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-border {
+        border-right: 1px solid $main-gray;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &-container {
+        width: 33%;
+        color: #fff;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &__title {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h4 {
+                font-size: 1.2rem;
+            }
+
+            button {
+                background-color: transparent;
+                color: $light-gray;
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                margin-right: 1rem;
+                border: 2px solid $light-gray;
+                border-radius: 5px;
+            }
+        }
+
+        &__games {
+            width: 95%;
+            margin-top: 1rem;
+
+            &-game {
+                color: #fff;
+                height: 10rem;
+                border-radius: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: $secondary-gray;
+                }
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////
+
 @media only screen and (max-width: 1000px) {
     section {
         width: 55rem;
@@ -463,6 +532,29 @@ section {
             &__left,
             &__right {
                 height: 9%;
+            }
+        }
+    }
+
+    .newtopcoming {
+        &-container {
+            &__title {
+                h4 {
+                    font-size: 0.9rem;
+                }
+
+                button {
+                    font-size: 0.7rem;
+                }
+            }
+
+            &__games {
+                width: 95%;
+                margin-top: 1rem;
+
+                &-game {
+                    height: 6.5rem;
+                }
             }
         }
     }
