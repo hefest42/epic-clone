@@ -20,7 +20,7 @@ const FreeGames = ({ firstGame, secondGame }) => {
                             </div>
                         </div>
                         <div className="free-info">
-                            <h4>Relicta</h4>
+                            <h4>{firstGame.name}</h4>
                             <p>Free Now - Jan 27 at 05:00 PM</p>
                         </div>
                     </Link>
@@ -35,7 +35,7 @@ const FreeGames = ({ firstGame, secondGame }) => {
                             </div>
                         </div>
                         <div className="free-info">
-                            <h4>DAEMON X MACHINA</h4>
+                            <h4>{secondGame.name}</h4>
                             <p>Free Jan 27 - Feb 03</p>
                         </div>
                     </Link>
