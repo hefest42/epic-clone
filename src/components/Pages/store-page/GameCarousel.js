@@ -11,28 +11,33 @@ const GameCarousel = ({ title, games }) => {
     const [showWishlistButton, setShowWishlistButton] = useState(false);
     const [posterWidth, setPosterWidth] = useState(calcPercentage(243.2, games.length * 243.2));
     const [posterNumber, setPosterNumber] = useState(0);
-    const [posterMovementAmount, setPosterMovementAmount] = useState(0);
+    const [slideNumber, setSlideNumber] = useState(0);
 
     const moveCarouselRight = () => {
-        if (Math.ceil(games.length / 6) - 1 === posterMovementAmount) return;
+        if (Math.ceil(games.length / 6) - 1 === slideNumber) return;
 
-        if (Math.floor(games.length / 6) - 1 === posterMovementAmount) {
-            setPosterNumber(state => state + (games.length - 6 * (posterMovementAmount + 1)));
+        if (Math.floor(games.length / 6) - 1 === slideNumber) {
+            setPosterNumber(state => state + (games.length - 6 * (slideNumber + 1)));
 
-            setPosterMovementAmount(state => state + 1);
+            setSlideNumber(state => state + 1);
         } else {
-            setPosterMovementAmount(state => state + 1);
+            setSlideNumber(state => state + 1);
 
             setPosterNumber(state => state + 6);
         }
     };
 
     const moveCarouselLeft = () => {
-        setPosterMovementAmount(state => state - 1);
-        setPosterNumber(state => state - 6);
-    };
+        if (Math.ceil(games.length / 6) - 1 === slideNumber) {
+            setPosterNumber(state => state - (games.length - 6 * slideNumber));
+            setSlideNumber(state => state - 1);
+        }
 
-    console.log(posterMovementAmount, posterNumber);
+        if (slideNumber > 0 && slideNumber < Math.ceil(games.length / 6) - 1) {
+            setSlideNumber(state => state - 1);
+            setPosterNumber(state => state - 6);
+        }
+    };
 
     return (
         <section className="game-carousel">

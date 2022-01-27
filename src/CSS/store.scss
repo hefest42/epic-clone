@@ -131,7 +131,7 @@ section {
 .game-carousel {
     position: relative;
     height: 27rem;
-    // overflow: hidden;
+    overflow: hidden;
 
     a {
         text-decoration: none;
@@ -607,5 +607,9 @@ section {
                 }
             }
         }
+    }
+
+    .discover-feature {
+        height: 23rem;
     }
 }
