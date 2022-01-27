@@ -1,30 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
 
 const SubHeader = () => {
+    const [stickySubHeader, setStickySubHeader] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
+        }
+
+        return () => setStickySubHeader(false);
+    }, []);
+
     return (
-        <div className="subheader-container">
+        <div className={`${stickySubHeader ? "subheader subheader-sticky" : "subheader"}`}>
             <div className="subheader-left">
                 <form action="">
-                    <input type="text" placeholder="search" />
+                    <span>&#128269;</span>
+                    <input type="text" placeholder="Search" />
                 </form>
-                <NavLink className={navData => (navData.isActive ? "subheader-link__active" : "")} to="">
-                    Discover
-                </NavLink>
-                <NavLink className={navData => (navData.isActive ? "subheader-link__active" : "")} to="browse">
-                    Browse
-                </NavLink>
-                <NavLink className={navData => (navData.isActive ? "subheader-link__active" : "")} to="news">
-                    News
-                </NavLink>
+
+                <div>
+                    <NavLink to="" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        Discover
+                    </NavLink>
+                    <NavLink to="browse" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        Browse
+                    </NavLink>
+                    <NavLink to="news" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        News
+                    </NavLink>
+                </div>
             </div>
 
             <div className="subheader-right">
-                <NavLink className={navData => (navData.isActive ? "subheader-link__active" : "")} to="wishlist">
+                <NavLink to="wishlist" className={navData => (navData.isActive ? "link-active" : "link")}>
                     Wishlist
                 </NavLink>
-                <NavLink className={navData => (navData.isActive ? "subheader-link__active" : "")} to="cart">
+                <NavLink to="cart" className={navData => (navData.isActive ? "link-active" : "link")}>
                     Cart
                 </NavLink>
             </div>

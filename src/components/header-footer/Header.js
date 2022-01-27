@@ -1,40 +1,53 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 import AccountDropdownMenu from "./AccountDropdownMenu";
 
-// FIX DROPDOWNMENU
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
     const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
-    const headerHandler = () => {
-        setShowDropdownMenu(false);
-    };
-
     return (
-        <header onMouseEnter={headerHandler} onMouseLeave={() => setShowDropdownMenu(false)}>
+        <header onMouseLeave={() => setShowDropdownMenu(false)}>
             <div className="header-left">
-                LOGO
-                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/store">
-                    <p>STORE</p>
+                <NavLink to="" className={navData => (navData.isActive ? "header-left__link link-active" : "header-left__link")}>
+                    <div className="header-left__link-top">
+                        <span>STORE</span>
+                    </div>
+                    <div className="header-left__link-down"></div>
                 </NavLink>
-                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/FAQ">
-                    <p>FAQ</p>
+
+                <NavLink to="faq" className={navData => (navData.isActive ? "header-left__link link-active" : "header-left__link")}>
+                    <div className="header-left__link-top">
+                        <span>FAQ</span>
+                    </div>
+                    <div className="header-left__link-down"></div>
                 </NavLink>
-                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/help">
-                    <p>HELP</p>
+
+                <NavLink to="help" className={navData => (navData.isActive ? "header-left__link link-active" : "header-left__link")}>
+                    <div className="header-left__link-top">
+                        <span>HELP</span>
+                    </div>
+                    <div className="header-left__link-down"></div>
                 </NavLink>
-                <NavLink className={navData => (navData.isActive ? "link-active" : "")} to="/unreal-engine">
-                    <p>UNREAL ENGINE</p>
+
+                <NavLink to="unreal-engine" className={navData => (navData.isActive ? "header-left__link link-active" : "header-left__link")}>
+                    <div className="header-left__link-top">
+                        <span>UNREAL ENGINE</span>
+                    </div>
+                    <div className="header-left__link-down"></div>
                 </NavLink>
             </div>
 
             <div className="header-right">
-                <div className="header-right__user" onMouseEnter={() => setShowDropdownMenu(true)}>
+                <div className="header-right__language" onMouseEnter={() => setShowDropdownMenu(false)}>
+                    <span>EN</span>
+                </div>
+                <div className="header-right__account" onMouseEnter={() => setShowDropdownMenu(true)}>
                     <span>USERNAME</span>
                 </div>
                 {showDropdownMenu && <AccountDropdownMenu mouseLeaveFn={() => setShowDropdownMenu(false)} />}
-                <button>DOWNLOAD</button>
+                <button onMouseEnter={() => setShowDropdownMenu(false)}>DOWNLOAD</button>
             </div>
         </header>
     );
