@@ -1,0 +1,15 @@
+.browse {
+    width: 100%;
+    height: 200vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.popular-genres {
+    background-color: rebeccapurple;
+    height: 15rem;
+    margin-top: 15rem;
+}

@@ -140,27 +140,6 @@ section {
 
         &-right {
             display: flex;
-
-            button {
-                background-color: $secondary-gray;
-                color: #ccc;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: none;
-                margin-left: 0.5rem;
-                font-size: 1rem;
-                cursor: pointer;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                &:hover {
-                    background-color: $main-gray;
-                    color: #fff;
-                }
-            }
         }
     }
 

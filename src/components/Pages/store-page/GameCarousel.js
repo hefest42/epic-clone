@@ -47,8 +47,12 @@ const GameCarousel = ({ title, games }) => {
                     <span>&#x203A;</span>
                 </div>
                 <div className="game-carousel__title-right">
-                    <button onClick={moveCarouselLeft}>&#x2039;</button>
-                    <button onClick={moveCarouselRight}>&#x203A;</button>
+                    <button className="carousel-button" onClick={moveCarouselLeft}>
+                        &#x2039;
+                    </button>
+                    <button className="carousel-button" onClick={moveCarouselRight}>
+                        &#x203A;
+                    </button>
                 </div>
             </div>
 
