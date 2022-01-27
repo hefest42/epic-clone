@@ -130,6 +130,27 @@ $main-link: rgb(140, 140, 140);
     }
 }
 
+.game-on-sale {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    :first-child {
+        background-color: $main-blue;
+        padding: 0.3rem 0.3rem;
+    }
+
+    :nth-child(2) {
+        color: $light-gray;
+        text-decoration: line-through;
+    }
+
+    span {
+        margin-right: 0.7rem;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .poster {
         &-cover__info {
@@ -167,6 +188,32 @@ $main-link: rgb(140, 140, 140);
                     margin-right: 0.8rem;
                 }
             }
+        }
+    }
+
+    .horizontal-poster {
+        font-size: 0.7rem;
+    }
+
+    .game-on-sale {
+        width: 100%;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.7rem;
+
+        :first-child {
+            background-color: $main-blue;
+            padding: 0.1.5rem 0.15rem;
+        }
+
+        :nth-child(2) {
+            color: $light-gray;
+            text-decoration: line-through;
+        }
+
+        span {
+            margin-right: 0.7rem;
         }
     }
 }

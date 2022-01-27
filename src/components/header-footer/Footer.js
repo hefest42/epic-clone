@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="footer-top">
                 <div className="footer-top__socials">
                     <div></div>
-                    <button>{"<"}</button>
+                    <button onClick={() => window.scrollTo(0, 0)}>{"<"}</button>
                 </div>
                 <div className="footer-top__resources">
                     <div>
