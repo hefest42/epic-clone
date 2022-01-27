@@ -12,6 +12,8 @@ import NewTopComing from "./NewTopComing";
 import DiscoverBottomFeature from "./DiscoverBottomFeature";
 import Footer from "../../header-footer/Footer";
 
+import BrowsePage from "../browse-page/BrowsePage";
+
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
 const StorePage = () => {
@@ -24,12 +26,12 @@ const StorePage = () => {
     return (
         <Fragment>
             <Header />
+            <SubHeader />
             <Routes>
                 <Route
                     path=""
                     element={
                         <div className="store">
-                            <SubHeader />
                             <HeroCarousel games={heroGames} />
                             <GameCarousel title="Games On Sale" games={gamesOnSale} />
                             <FeaturedGames
@@ -52,6 +54,7 @@ const StorePage = () => {
                         </div>
                     }
                 />
+                <Route path="/browse" element={<BrowsePage />} />
             </Routes>
         </Fragment>
     );
