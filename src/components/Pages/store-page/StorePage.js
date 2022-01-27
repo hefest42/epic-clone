@@ -10,6 +10,7 @@ import FeaturedGames from "./FeaturedGames";
 import FreeGames from "./FreeGames";
 import NewTopComing from "./NewTopComing";
 import DiscoverBottomFeature from "./DiscoverBottomFeature";
+import Footer from "../../header-footer/Footer";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -23,7 +24,6 @@ const StorePage = () => {
     return (
         <Fragment>
             <Header />
-
             <Routes>
                 <Route
                     path=""
@@ -48,6 +48,7 @@ const StorePage = () => {
                             <GameCarousel title="Recently Updated" games={GAMES.slice().sort((a, b) => a.name.localeCompare(b.name))} />
                             <GameCarousel title="Most Popular" games={GAMES.slice().sort((a, b) => a.price - b.price)} />
                             <DiscoverBottomFeature />
+                            <Footer />
                         </div>
                     }
                 />
