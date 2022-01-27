@@ -1,34 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
+import { calcDiscount, calcPercentage } from "../../../store/helperFunctions";
+
 // FIX THE CAROUSEL MOVEMENT
 // 243.2
+// 6.25%
 const GameCarousel = ({ title, games }) => {
     const [showWishlistButton, setShowWishlistButton] = useState(false);
-    const [slideMovementAmount, setSlideMovementAmount] = useState(0);
-    const [slideNumber, setSlideNumber] = useState(1);
-
-    const calcDiscount = (price, discount) => {
-        return (price * (100 - discount)) / 100;
-    };
+    const [posterWidth, setPosterWidth] = useState(calcPercentage(243.2, games.length * 243.2));
+    const [posterNumber, setPosterNumber] = useState(0);
+    const [posterMovementAmount, setPosterMovementAmount] = useState(0);
 
     const moveCarouselRight = () => {
-        let posters = 6 * slideNumber;
+        if (Math.ceil(games.length / 6) - 1 === posterMovementAmount) return;
 
-        if (posters > games.length) return;
+        if (Math.floor(games.length / 6) - 1 === posterMovementAmount) {
+            setPosterNumber(state => state + (games.length - 6 * (posterMovementAmount + 1)));
 
-        setSlideNumber(state => state + 1);
+            setPosterMovementAmount(state => state + 1);
+        } else {
+            setPosterMovementAmount(state => state + 1);
 
-        if (games.length - posters < 6) {
-            setSlideMovementAmount(state => state + -243.2 * (games.length - posters));
-
-            return;
+            setPosterNumber(state => state + 6);
         }
+    };
 
-        if (games.length > posters) {
-            setSlideMovementAmount(-243.2 * posters);
-        }
+    const moveCarouselLeft = () => {
+        setPosterMovementAmount(state => state - 1);
+        setPosterNumber(state => state - 6);
     };
 
     return (
@@ -39,12 +40,12 @@ const GameCarousel = ({ title, games }) => {
                     <span>&#x203A;</span>
                 </div>
                 <div className="game-carousel__title-right">
-                    <button onClick={() => console.log("test")}>&#x2039;</button>
+                    <button onClick={moveCarouselLeft}>&#x2039;</button>
                     <button onClick={moveCarouselRight}>&#x203A;</button>
                 </div>
             </div>
 
-            <div className="game-carousel__container" style={{ transform: `translateX(${slideMovementAmount}px)` }}>
+            <div className="game-carousel__container" style={{ transform: `translateX(-${posterWidth * posterNumber}%)` }}>
                 {games.map((game, i) => (
                     <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
                         <div
