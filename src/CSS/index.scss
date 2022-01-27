@@ -37,6 +37,32 @@ body {
     text-decoration: none;
 }
 
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.space-between-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .carousel-button {
     background-color: $secondary-gray;
     color: #ccc;
