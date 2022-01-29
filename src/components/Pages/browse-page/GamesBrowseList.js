@@ -48,7 +48,7 @@ const GamesBrowseList = () => {
             <div className="browseList-games">
                 <div className="browseList-games__list">
                     {GAMES.map((game, i) => (
-                        <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
+                        <Link key={i} to={`/p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
                             <div
                                 className="game-carousel__poster"
                                 onMouseEnter={() => setShowWishlistButton(i)}
