@@ -9,6 +9,7 @@
 }
 
 .popular-genres {
+    position: relative;
     color: #fff;
     height: 18rem;
     margin-top: 4rem;
@@ -23,21 +24,33 @@
     }
 }
 
+.carousel-item__wrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    a {
+        text-decoration: none;
+    }
+}
+
 .carousel-item {
     background-color: $secondary-gray;
     color: #ccc;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 17rem;
+    height: 15rem;
+
     border-radius: 5px;
+
+    &__spacer {
+        width: 1.25rem;
+    }
 
     &:hover {
         background-color: $main-gray;
         color: #fff;
     }
-
-    width: 17rem;
-    height: 100%;
 
     &__images {
         position: relative;
