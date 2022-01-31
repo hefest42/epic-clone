@@ -87,9 +87,13 @@ const GamesBrowseFilters = () => {
                 {showPrice && (
                     <div className="browseFilters-filter">
                         {prices.map((item, i) => (
-                            <div key={i} className="space-between">
+                            <div
+                                key={i}
+                                className={`${activeFilters.includes(item) ? "filter-active space-between" : "space-between"}`}
+                                onClick={() => addFilter(item)}
+                            >
                                 <span>{item}</span>
-                                <span> &#10004;</span>
+                                <span className="browseFilters-filter__checkmark"> &#10004;</span>
                             </div>
                         ))}
                     </div>
@@ -111,9 +115,13 @@ const GamesBrowseFilters = () => {
                 {showGenre && (
                     <div className="browseFilters-filter">
                         {genres.map((item, i) => (
-                            <div key={i} className="space-between">
+                            <div
+                                key={i}
+                                className={`${activeFilters.includes(item) ? "filter-active space-between" : "space-between"}`}
+                                onClick={() => addFilter(item)}
+                            >
                                 <span>{item}</span>
-                                <span> &#10004;</span>
+                                <span className="browseFilters-filter__checkmark"> &#10004;</span>
                             </div>
                         ))}
                     </div>
@@ -135,9 +143,13 @@ const GamesBrowseFilters = () => {
                 {showFeature && (
                     <div className="browseFilters-filter">
                         {features.map((item, i) => (
-                            <div key={i} className="filter-active space-between">
+                            <div
+                                key={i}
+                                className={`${activeFilters.includes(item) ? "filter-active space-between" : "space-between"}`}
+                                onClick={() => addFilter(item)}
+                            >
                                 <span>{item}</span>
-                                <span> &#10004;</span>
+                                <span className="browseFilters-filter__checkmark"> &#10004;</span>
                             </div>
                         ))}
                     </div>
@@ -159,9 +171,13 @@ const GamesBrowseFilters = () => {
                 {showTypes && (
                     <div className="browseFilters-filter">
                         {types.map((item, i) => (
-                            <div key={i} className="space-between">
+                            <div
+                                key={i}
+                                className={`${activeFilters.includes(item) ? "filter-active space-between" : "space-between"}`}
+                                onClick={() => addFilter(item)}
+                            >
                                 <span>{item}</span>
-                                <span> &#10004;</span>
+                                <span className="browseFilters-filter__checkmark"> &#10004;</span>
                             </div>
                         ))}
                     </div>
