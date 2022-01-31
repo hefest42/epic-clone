@@ -1,0 +1,122 @@
+$main-gray: #2a2a2a;
+$secondary-gray: #2a2a2a8f;
+$main-blue: #0078f2;
+$main-link: rgb(140, 140, 140);
+$error-red: #de3341;
+
+.createAccount {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+
+    &-container {
+        background-color: $secondary-gray;
+        width: 30rem;
+        margin-top: 7rem;
+        padding: 3rem 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        form {
+            width: 80%;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #fff !important;
+        }
+
+        &__title {
+            margin-bottom: 2rem;
+        }
+
+        &__text {
+            position: relative;
+            width: 100%;
+            height: 3.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid $main-link;
+            border-radius: 5px;
+            z-index: 50;
+
+            label {
+                position: absolute;
+                color: $main-link;
+                top: 30%;
+                left: 5%;
+                z-index: 100;
+                pointer-events: none;
+
+                span {
+                    color: orange;
+                }
+            }
+
+            input {
+                background-color: transparent;
+                color: #fff;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
+
+        &__active {
+            position: relative;
+            width: 100%;
+            height: 3.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            z-index: 50;
+            transition: all 1s linear;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            label {
+                position: absolute;
+                color: #fff;
+                top: 5%;
+                left: 5%;
+                font-size: 0.7rem;
+                z-index: 100;
+                pointer-events: none;
+
+                span {
+                    color: orange;
+                }
+            }
+
+            input {
+                background-color: transparent;
+                color: #fff;
+                width: 90%;
+                height: 70%;
+                font-size: 1rem;
+                border: none;
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+
+        &__names {
+            margin-bottom: 2rem;
+
+            input {
+                width: 49%;
+            }
+        }
+    }
+}
