@@ -24,6 +24,11 @@ $error-red: #de3341;
             width: 80%;
         }
 
+        p {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
@@ -32,90 +37,117 @@ $error-red: #de3341;
             -webkit-text-fill-color: #fff !important;
         }
 
-        &__title {
-            margin-bottom: 2rem;
+        &__error {
+            color: $error-red;
+            padding: 0.5rem 0 1rem 0;
         }
 
-        &__text {
-            position: relative;
+        &__check {
+            div {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                input {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                label {
+                    width: 90%;
+                    margin-left: 0.7rem;
+                }
+            }
+        }
+
+        &__button {
+            background-color: $main-blue;
+            color: #fff;
             width: 100%;
-            height: 3.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid $main-link;
-            border-radius: 5px;
-            z-index: 50;
+            height: 3rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
 
-            label {
-                position: absolute;
-                color: $main-link;
-                top: 30%;
-                left: 5%;
-                z-index: 100;
-                pointer-events: none;
+.accountInput {
+    &-inactive {
+        position: relative;
+        width: 100%;
+        height: 3.5rem;
+        margin-bottom: 2rem;
+        border: 1px solid $main-link;
+        border-radius: 5px;
+        z-index: 50;
 
-                span {
-                    color: orange;
-                }
-            }
+        label {
+            position: absolute;
+            color: $main-link;
+            top: 30%;
+            left: 5%;
+            z-index: 100;
+            pointer-events: none;
 
-            input {
-                background-color: transparent;
-                color: #fff;
-                width: 100%;
-                height: 100%;
-                border: none;
+            span {
+                color: orange;
             }
         }
 
-        &__active {
-            position: relative;
+        input {
+            background-color: transparent;
+            color: #fff;
             width: 100%;
-            height: 3.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid #fff;
-            border-radius: 5px;
-            z-index: 50;
-            transition: all 1s linear;
+            height: 100%;
+            border: none;
+        }
+    }
 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
+    &-active {
+        position: relative;
+        width: 100%;
+        height: 3.5rem;
+        margin-bottom: 2rem;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        z-index: 50;
+        transition: all 1s linear;
 
-            label {
-                position: absolute;
-                color: #fff;
-                top: 5%;
-                left: 5%;
-                font-size: 0.7rem;
-                z-index: 100;
-                pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
 
-                span {
-                    color: orange;
-                }
-            }
+        label {
+            position: absolute;
+            color: #fff;
+            top: 5%;
+            left: 5%;
+            font-size: 0.7rem;
+            z-index: 100;
+            pointer-events: none;
 
-            input {
-                background-color: transparent;
-                color: #fff;
-                width: 90%;
-                height: 70%;
-                font-size: 1rem;
-                border: none;
-
-                &:focus {
-                    outline: none;
-                    border: none;
-                }
+            span {
+                color: orange;
             }
         }
 
-        &__names {
-            margin-bottom: 2rem;
+        input {
+            background-color: transparent;
+            color: #fff;
+            width: 90%;
+            height: 70%;
+            font-size: 1rem;
+            border: none;
 
-            input {
-                width: 49%;
+            &:focus {
+                outline: none;
+                border: none;
             }
         }
     }

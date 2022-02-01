@@ -1,1 +1,1 @@
-const ACCOUNTS = {};
+export let ACCOUNTS = [];
