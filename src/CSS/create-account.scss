@@ -9,6 +9,17 @@ $error-red: #de3341;
     width: 100%;
     height: 100%;
 
+    &-date {
+        background-color: $secondary-gray;
+        width: 30rem;
+        margin: 15rem 0 0 0;
+        padding: 5rem 0;
+
+        p {
+            margin-top: 2rem;
+        }
+    }
+
     &-container {
         background-color: $secondary-gray;
         width: 30rem;
@@ -72,6 +83,101 @@ $error-red: #de3341;
             font-size: 1rem;
             border: none;
             cursor: pointer;
+        }
+    }
+}
+
+.datePicker {
+    h4 {
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+
+    span {
+        margin-left: 1rem;
+    }
+
+    &-button {
+        background-color: $main-blue;
+        width: 23rem;
+        height: 3rem;
+        margin-top: 2rem;
+        border: none;
+        border-radius: 5px;
+    }
+
+    &-container {
+        width: 23rem;
+
+        &__select {
+            position: relative;
+        }
+
+        &__button,
+        &__year {
+            background-color: transparent;
+            color: $main-link;
+            width: 7rem;
+            height: 3.5rem;
+            border: 1px solid $main-link;
+            border-radius: 3px;
+
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 10;
+
+            input {
+                background-color: transparent;
+                color: $main-link;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                border: none;
+                font-size: 1rem;
+            }
+        }
+
+        &__list {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background-color: $main-gray;
+            width: 9rem;
+            height: 30rem;
+            overflow: scroll;
+            overflow-x: hidden;
+            list-style: none;
+            z-index: 100;
+
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: $main-gray;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $main-link;
+            }
+
+            li {
+                width: 100%;
+                height: 2.5rem;
+                cursor: pointer;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: $main-link;
+                    color: #fff;
+                }
+            }
         }
     }
 }

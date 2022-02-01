@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 
 import AccountInput from "./AccountInput";
+import DatePicker from "./DatePicker";
 
 import { ACCOUNTS } from "../../../dummy-server/DUMMY_ACCOUNTS";
 
@@ -13,6 +14,7 @@ const CreateAccount = () => {
     const [displayNameValue, setDisplayNameValue] = useState("");
     const [emailValue, setEmailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
+    const [dateValue, setDateValue] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const newsLetterRef = useRef();
     const termsOfServiceRef = useRef();
@@ -66,10 +68,14 @@ const CreateAccount = () => {
         setErrorMessage("");
     };
 
+    console.log(dateValue);
+
     return (
         <div className="createAccount centered-column">
             {pageStep === 1 && (
                 <div className="createAccount-date centered-column">
+                    <DatePicker value={dateValue} getDateValue={setDateValue} />
+
                     <p>Privacy Policy</p>
 
                     <p>Have an Epic Games Account? Sign In</p>
