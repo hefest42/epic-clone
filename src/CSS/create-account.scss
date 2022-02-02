@@ -1,13 +1,65 @@
 $main-gray: #2a2a2a;
 $secondary-gray: #2a2a2a8f;
 $main-blue: #0078f2;
+$secondary-blue: #0062be;
 $main-link: rgb(140, 140, 140);
 $error-red: #de3341;
+$error-secondary: #d54841;
 
 .createAccount {
     color: #fff;
     width: 100%;
     height: 100%;
+
+    &-error {
+        background-color: $error-secondary;
+        width: 100%;
+        height: 3rem;
+        margin: 1rem 0 2rem 0;
+        border-radius: 3px;
+
+        p {
+            color: rgb(218, 218, 218);
+            font-size: 1rem;
+        }
+    }
+
+    &-button {
+        &__active {
+            background-color: $main-blue;
+            color: #fff;
+            width: 100%;
+            height: 3.5rem;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        &__inactive {
+            background-color: $secondary-blue;
+            color: $main-link;
+            width: 100%;
+            height: 3.5rem;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            pointer-events: none;
+        }
+    }
+
+    &-info {
+        margin-top: 1rem;
+
+        p {
+            margin-top: 1rem;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
 
     &-date {
         background-color: $secondary-gray;
@@ -18,6 +70,11 @@ $error-red: #de3341;
         p {
             margin-top: 2rem;
         }
+    }
+
+    &-error {
+        color: $error-red;
+        padding: 0.5rem 0 1rem 0;
     }
 
     &-container {
@@ -46,11 +103,6 @@ $error-red: #de3341;
         input:-webkit-autofill:active {
             transition: background-color 5000s ease-in-out 0s;
             -webkit-text-fill-color: #fff !important;
-        }
-
-        &__error {
-            color: $error-red;
-            padding: 0.5rem 0 1rem 0;
         }
 
         &__check {
@@ -107,6 +159,7 @@ $error-red: #de3341;
         margin-top: 2rem;
         border: none;
         border-radius: 5px;
+        cursor: pointer;
     }
 
     &-container {
@@ -255,6 +308,31 @@ $error-red: #de3341;
                 outline: none;
                 border: none;
             }
+        }
+    }
+}
+
+//! //////////////////////////////////////////////////////////////////////////////////////////////
+
+.logIn {
+    width: 100%;
+    height: 100vh;
+
+    &-outer {
+        background-color: $secondary-gray;
+        color: $main-link;
+        width: 30rem;
+        padding: 3rem 0;
+    }
+
+    &-inner {
+        width: 80%;
+
+        &__title {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
         }
     }
 }

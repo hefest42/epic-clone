@@ -54,6 +54,7 @@ const CreateAccount = () => {
             displayName: displayNameValue.trim(),
             emailAddress: emailValue.trim(),
             password: passwordValue.trim(),
+            birthDate: dateValue,
             newsletter: newsLetterRef.current.checked,
         });
 
@@ -68,13 +69,11 @@ const CreateAccount = () => {
         setErrorMessage("");
     };
 
-    console.log(dateValue);
-
     return (
         <div className="createAccount centered-column">
             {pageStep === 1 && (
                 <div className="createAccount-date centered-column">
-                    <DatePicker value={dateValue} getDateValue={setDateValue} />
+                    <DatePicker getDateValue={setDateValue} changeStep={setPageStep} />
 
                     <p>Privacy Policy</p>
 
@@ -89,7 +88,7 @@ const CreateAccount = () => {
                             <h3>Sign Up</h3>
                         </div>
 
-                        <div className="createAccount-container__error">
+                        <div className="createAccount-error">
                             <p>{errorMessage}</p>
                         </div>
 

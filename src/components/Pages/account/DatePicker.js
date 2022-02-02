@@ -3,11 +3,10 @@ import { useState } from "react/cjs/react.development";
 
 import { shortMonths, numberOfDays } from "../../../store/helperFunctions";
 
-// TODO check if inputs empty
-// TODO make a error message
-// TODO
-const DatePicker = ({ getDateValue }) => {
+const DatePicker = ({ getDateValue, changeStep }) => {
+    const [errorMessage, setErrorMessage] = useState("");
     const [showDays, setShowDays] = useState(false);
+    const [numberOfDaysInMonth, setNumberOfDaysInMonth] = useState(31);
     const [showMonth, setShowMonths] = useState(false);
     const [dayValue, setDayValue] = useState("Day");
     const [monthValue, setMonthValue] = useState("Month");
@@ -15,20 +14,46 @@ const DatePicker = ({ getDateValue }) => {
     const yearInputRef = useRef();
 
     const dateHandler = () => {
+        setErrorMessage("");
         const month = shortMonths.findIndex(month => month === monthValue) + 1;
 
-        if (!/\d/.test(yearValue)) return;
+        if (monthValue === "Month") {
+            setErrorMessage("Please select a month.");
+            return;
+        }
+
+        if (dayValue === "Day") {
+            setErrorMessage("Please select a day.");
+            return;
+        }
+
+        if (!/\d/.test(yearValue)) {
+            setErrorMessage("Please input a valid year.");
+            return;
+        }
 
         getDateValue(`${yearValue}/${String(month).padStart(2, 0)}/${dayValue}`);
 
         setDayValue("Day");
         setMonthValue("Month");
         setYearValue("");
+
+        changeStep(2);
+    };
+
+    const changeNumberOfDaysInMonth = monthValue => {
+        if (monthValue === "Sep" || monthValue === "Apr" || monthValue === "Jun" || monthValue === "Nov") setNumberOfDaysInMonth(30);
+        else if (monthValue === "Feb") setNumberOfDaysInMonth(28);
+        else setNumberOfDaysInMonth(31);
     };
 
     return (
         <div className="datePicker centered-column">
             <h4>Enter Your Date of Birth</h4>
+
+            <div className="createAccount-error">
+                <p>{errorMessage}</p>
+            </div>
 
             <div className="datePicker-container space-between">
                 <div className="datePicker-container__select">
@@ -39,7 +64,7 @@ const DatePicker = ({ getDateValue }) => {
                             setShowDays(false);
                         }}
                     >
-                        {monthValue} <span>{">"}</span>
+                        {monthValue}
                     </button>
                     {showMonth && (
                         <ul className="datePicker-container__list">
@@ -49,6 +74,7 @@ const DatePicker = ({ getDateValue }) => {
                                     onClick={() => {
                                         setMonthValue(month);
                                         setShowMonths(false);
+                                        changeNumberOfDaysInMonth(month);
                                     }}
                                 >
                                     {month}
@@ -66,11 +92,11 @@ const DatePicker = ({ getDateValue }) => {
                             setShowMonths(false);
                         }}
                     >
-                        {dayValue} <span>{">"}</span>
+                        {dayValue}
                     </button>
                     {showDays && (
                         <ul className="datePicker-container__list">
-                            {numberOfDays.map((day, i) => (
+                            {numberOfDays.slice(0, numberOfDaysInMonth).map((day, i) => (
                                 <li
                                     key={i}
                                     onClick={() => {
