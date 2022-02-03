@@ -7,7 +7,7 @@ const AccountInput = ({ title, type, id, inputValue, getInputValue }) => {
 
     return (
         <div className={isInputFocused || inputValue !== "" ? "accountInput-active" : "accountInput-inactive"}>
-            <label htmlFor="first">{title}</label>
+            <label htmlFor={id}>{title}</label>
             <input
                 type={type}
                 id={id}
