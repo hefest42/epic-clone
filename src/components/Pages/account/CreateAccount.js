@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
-import AccountInput from "./AccountInput";
 import DatePicker from "./DatePicker";
 
 import { ACCOUNTS } from "../../../dummy-server/DUMMY_ACCOUNTS";
@@ -9,10 +8,11 @@ import { ACCOUNTS } from "../../../dummy-server/DUMMY_ACCOUNTS";
 
 const CreateAccount = () => {
     const [pageStep, setPageStep] = useState(1);
+    const [yearValue, setYearValue] = useState();
 
     return (
         <div className="createAccount centered">
-            {pageStep === 1 && <DatePicker />}
+            {pageStep === 1 && <DatePicker changeStep={setPageStep} getYear={setYearValue} />}
             {pageStep === 2 && <div></div>}
         </div>
     );
