@@ -2,10 +2,14 @@ import React, { useState } from "react";
 
 import AccountDropdownMenu from "./AccountDropdownMenu";
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [showDropdownMenu, setShowDropdownMenu] = useState(false);
+    const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
+    const loggedInAccount = useSelector(state => state.loggedInAccount.account);
 
     return (
         <header onMouseLeave={() => setShowDropdownMenu(false)}>
@@ -43,10 +47,19 @@ const Header = () => {
                 <div className="header-right__language" onMouseEnter={() => setShowDropdownMenu(false)}>
                     <span>EN</span>
                 </div>
-                <div className="header-right__account" onMouseEnter={() => setShowDropdownMenu(true)}>
-                    <span>USERNAME</span>
-                </div>
+
+                {isLoggedIn ? (
+                    <div className="header-right__account" onMouseEnter={() => setShowDropdownMenu(true)}>
+                        <span>{loggedInAccount.displayName}</span>
+                    </div>
+                ) : (
+                    <Link to="/log-in">
+                        <div className="header-right__account">Sign-in</div>
+                    </Link>
+                )}
+
                 {showDropdownMenu && <AccountDropdownMenu mouseLeaveFn={() => setShowDropdownMenu(false)} />}
+
                 <button onMouseEnter={() => setShowDropdownMenu(false)}>DOWNLOAD</button>
             </div>
         </header>

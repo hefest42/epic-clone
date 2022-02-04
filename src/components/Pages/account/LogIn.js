@@ -2,18 +2,49 @@ import React, { useState } from "react";
 
 import AccountInput from "./AccountInput";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+
+import { setAccount } from "../../../store/AccountSlice";
+
+import { ACCOUNTS } from "../../../dummy-server/DUMMY_ACCOUNTS";
 
 const LogIn = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [errorMessage, setErrorMessage] = useState("");
     const [emailValue, setEmailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
 
+    const logInHandler = e => {
+        e.preventDefault();
+
+        const index = ACCOUNTS.findIndex(acc => acc.email === emailValue);
+
+        if (index === -1) {
+            setErrorMessage("Please check your email/password");
+            return;
+        }
+
+        const account = ACCOUNTS[index];
+
+        if (account.password !== passwordValue) {
+            console.log("wrong password");
+            setErrorMessage("Please check your email/password");
+            return;
+        }
+
+        dispatch(setAccount(account));
+        navigate("/store");
+    };
+
     return (
         <div className="logIn centered">
             <div className="logIn-outer centered-column">
-                <form className="logIn-inner centered-column">
-                    <div className="logIn-inner__title">Sign in with an Epic Games Account</div>
+                <form className="logIn-inner centered-column" onSubmit={logInHandler}>
+                    <div className="createAccount-title">Sign in with an Epic Games Account</div>
 
                     {errorMessage === "" ? (
                         ""
