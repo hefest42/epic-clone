@@ -54,7 +54,7 @@ export const GAMES = [
         posterSmall: sifuSmallPoster,
         shortDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad necessitatibus tenetur similique officiis, quidem ab?",
         price: "39.99",
-        discount: "",
+        discount: "50",
         gameOnSale: false,
         gameFeatured: true,
     },
@@ -113,6 +113,7 @@ export const GAMES = [
         discount: "50",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Action"],
     },
     {
         name: "Golf Club Wasteland",
