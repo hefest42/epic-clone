@@ -1,8 +1,11 @@
 $main-gray: #2a2a2a;
 $secondary-gray: #2a2a2a8f;
+$border-gray: rgb(133, 133, 133);
 $main-blue: #0078f2;
+$secondary-blue: #0062be;
 $main-link: rgb(140, 140, 140);
-
+$error-red: #de3341;
+$error-secondary: #d54841;
 // HEADER
 header {
     position: relative;
@@ -248,6 +251,7 @@ header {
     &-top {
         width: 90%;
         height: 45%;
+        border-bottom: 1px solid $border-gray;
 
         display: flex;
         flex-direction: column;
