@@ -1,0 +1,125 @@
+$main-gray: #2a2a2a;
+$secondary-gray: #2a2a2a8f;
+$border-gray: rgb(133, 133, 133);
+$main-blue: #0078f2;
+$secondary-blue: #0062be;
+$main-link: rgb(140, 140, 140);
+$error-red: #de3341;
+$error-secondary: #d54841;
+
+.wishlist {
+    width: 100%;
+
+    &-wrapper {
+        width: 90rem;
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &-left {
+        width: 83%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &__games {
+            width: 100%;
+        }
+    }
+
+    &-right {
+        width: 15%;
+    }
+}
+
+.wishlistItem {
+    background-color: $secondary-gray;
+    width: 100%;
+    height: 13rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+    &-inner {
+        width: 96%;
+        height: 90%;
+
+        &__left {
+            background-color: teal;
+            width: 12%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__right {
+            width: 87%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            &-title {
+                width: 100%;
+                color: #fff;
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                div {
+                    font-size: 1.1rem;
+                }
+            }
+
+            &-buttons {
+                width: 100%;
+
+                p {
+                    color: $main-link;
+                    text-decoration: underline;
+                    margin-right: 1rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+
+                button {
+                    background-color: transparent;
+                    color: #fff;
+                    width: 13rem;
+                    height: 3.5rem;
+                    border: 1px solid $border-gray;
+                    border-radius: 3px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $border-gray;
+                        color: #fff;
+                        border: 1px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+}

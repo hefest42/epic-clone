@@ -5,11 +5,16 @@
 @import "./browse.scss";
 @import "./UI.scss";
 @import "./create-account.scss";
+@import "./wishlist-cart.scss";
 
 $main-gray: #2a2a2a;
 $secondary-gray: #2a2a2a8f;
+$border-gray: rgb(133, 133, 133);
 $main-blue: #0078f2;
+$secondary-blue: #0062be;
 $main-link: rgb(140, 140, 140);
+$error-red: #de3341;
+$error-secondary: #d54841;
 
 * {
     box-sizing: border-box;

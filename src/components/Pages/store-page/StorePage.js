@@ -13,6 +13,7 @@ import DiscoverBottomFeature from "./DiscoverBottomFeature";
 import Footer from "../../header-footer/Footer";
 
 import BrowsePage from "../browse-page/BrowsePage";
+import WishlistPage from "../wishlist-page/WishlistPage";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -55,6 +56,7 @@ const StorePage = () => {
                     }
                 />
                 <Route path="/browse" element={<BrowsePage />} />
+                <Route path="/wishlist" element={<WishlistPage />} />
             </Routes>
         </Fragment>
     );
