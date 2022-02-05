@@ -18,6 +18,10 @@ const accountSlice = createSlice({
         },
 
         addGamesToWishlist(state, action) {
+            console.log("game added");
+
+            if (!state.loggedIn) return;
+
             state.account.wishlist.push(action.payload);
         },
     },
