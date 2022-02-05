@@ -16,9 +16,13 @@ const accountSlice = createSlice({
             state.loggedIn = false;
             state.account = {};
         },
+
+        addGamesToWishlist(state, action) {
+            state.account.wishlist.push(action.payload);
+        },
     },
 });
 
-export const { setAccount, logOutAccount } = accountSlice.actions;
+export const { setAccount, logOutAccount, addGamesToWishlist } = accountSlice.actions;
 
 export default accountSlice.reducer;

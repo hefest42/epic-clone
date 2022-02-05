@@ -2,14 +2,13 @@ import React, { Fragment } from "react";
 
 import Wishlist from "./Wishlist";
 import LogInWarning from "../../UI/LogInWarning";
-import Footer from "../../header-footer/Footer";
 
 import { useSelector } from "react-redux";
 
 const WishlistPage = () => {
-    const isLoggedIn = useSelector(state => state.loggedInAccount.isLoggedIn);
+    const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
 
-    return <>{isLoggedIn ? <Wishlist /> : <LogInWarning warning="Wishlist" />}</>;
+    return <>{isLoggedIn ? <Wishlist /> : <LogInWarning warning="Sign In to see your Wishlist" showFooter={true} />}</>;
 };
 
 export default WishlistPage;

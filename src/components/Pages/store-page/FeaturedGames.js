@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { addGamesToWishlist } from "../../../store/AccountSlice";
+
 import { Link } from "react-router-dom";
 
 const FeaturedGames = ({ firstGame, secondGame }) => {
+    const dispatch = useDispatch();
     const [showFirstWishlistButton, setShowFirstWishlistButton] = useState(false);
     const [showSecondWishlistButton, setShowSecondWishlistButton] = useState(false);
 
@@ -16,7 +20,9 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                         onMouseLeave={() => setShowFirstWishlistButton(false)}
                     >
                         <img src={firstGame.posterBig} alt="" />
-                        <div className="poster-cover__white">{showFirstWishlistButton && <button>+</button>}</div>
+                        <div className="poster-cover__white">
+                            {showFirstWishlistButton && <button onClick={() => dispatch(addGamesToWishlist(firstGame))}>+</button>}
+                        </div>
                     </div>
                     <h2 className="featured-container__title">{firstGame.name}</h2>
                 </Link>
@@ -32,7 +38,9 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                         onMouseLeave={() => setShowSecondWishlistButton(false)}
                     >
                         <img src={secondGame.posterBig} alt="" />
-                        <div className="poster-cover__white">{showSecondWishlistButton && <button>+</button>}</div>
+                        <div className="poster-cover__white">
+                            {showSecondWishlistButton && <button onClick={() => dispatch(addGamesToWishlist(secondGame))}>+</button>}
+                        </div>
                     </div>
                     <h2 className="featured-container__title">{secondGame.name}</h2>
                 </Link>
