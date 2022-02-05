@@ -1,55 +1,15 @@
-import React, { useState } from "react";
+import React, { Fragment } from "react";
 
-import GamesBrowseFilters from "../browse-page/GamesBrowseFilters";
-import WishlistItem from "./WishlistItem";
+import Wishlist from "./Wishlist";
+import LogInWarning from "../../UI/LogInWarning";
 import Footer from "../../header-footer/Footer";
 
-import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
+import { useSelector } from "react-redux";
 
 const WishlistPage = () => {
-    const [showDropdownMenu, setShowDropdownMenu] = useState();
+    const isLoggedIn = useSelector(state => state.loggedInAccount.isLoggedIn);
 
-    //prettier-ignore
-    return (
-        <section className="wishlist centered-column">
-            <div className="wishlist-wrapper">
-                    <h1>Wishlist</h1>
-
-                    <div className="browseList-buttons__left">
-                    <button className="centered" onClick={() => setShowDropdownMenu(state => !state)}>
-                        <span>Sort By:</span>
-                        <span>{` Recently Added`}</span>
-                        <div style={{transform: `rotate(${showDropdownMenu ? "-90deg" : "90deg"})`,}}>{">"}</div>
-                    </button>
-                    {showDropdownMenu && (
-                        <div className="browseList-buttons__dropdown">
-                            <button>On Sale</button>
-                            <button>Recently Added</button>
-                            <button>Alphabetical</button>
-                            <button>Price: Low to High</button>
-                            <button>Price: High to Low</button>
-                        </div>
-                    )}
-                </div>
-                
-                <div className="wishlist-left__sort">{`Sort by: On Sale`} <span>{">"}</span></div>
-                <div className="wishlist-wrapper__container">
-                    <div className="wishlist-left">
-                        <div className="wishlist-left__games">
-                            <WishlistItem game={GAMES[2]}  />
-                            <WishlistItem game={GAMES[10]} />
-                        </div>
-                    </div>
-
-                    <div className="wishlist-right">
-                        <GamesBrowseFilters />
-                    </div>
-                </div>
-            </div>
-
-            <Footer />
-        </section>
-    );
+    return <>{isLoggedIn ? <Wishlist /> : <LogInWarning warning="Wishlist" />}</>;
 };
 
 export default WishlistPage;

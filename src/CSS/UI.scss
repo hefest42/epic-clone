@@ -1,7 +1,11 @@
 $main-gray: #2a2a2a;
 $secondary-gray: #2a2a2a8f;
+$border-gray: rgb(133, 133, 133);
 $main-blue: #0078f2;
+$secondary-blue: #0062be;
 $main-link: rgb(140, 140, 140);
+$error-red: #de3341;
+$error-secondary: #d54841;
 
 .poster {
     position: absolute;
@@ -214,6 +218,34 @@ $main-link: rgb(140, 140, 140);
 
         span {
             margin-right: 0.7rem;
+        }
+    }
+}
+
+//! ////////////////////////////////////////////////////////////////////////////////////////////
+
+.logIn-warning {
+    width: 100%;
+    height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__container {
+        width: 100%;
+        height: 15rem;
+        font-size: 2rem;
+        color: #fff;
+
+        a {
+            margin-right: 0.5rem;
+            color: $main-link;
+
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }
