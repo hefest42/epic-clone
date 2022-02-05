@@ -39,7 +39,17 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                     >
                         <img src={secondGame.posterBig} alt="" />
                         <div className="poster-cover__white">
-                            {showSecondWishlistButton && <button onClick={() => dispatch(addGamesToWishlist(secondGame))}>+</button>}
+                            {showSecondWishlistButton && (
+                                <button
+                                    onClick={e => {
+                                        if (e.target === e.currentTarget) {
+                                            dispatch(addGamesToWishlist(secondGame));
+                                        }
+                                    }}
+                                >
+                                    +
+                                </button>
+                            )}
                         </div>
                     </div>
                     <h2 className="featured-container__title">{secondGame.name}</h2>

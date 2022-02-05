@@ -1,8 +1,12 @@
 import React from "react";
 
+import { useDispatch } from "react-redux";
+import { addGamesToWishlist } from "../../store/AccountSlice";
+
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const Poster = ({ poster, game, index, slideNumber, cover }) => {
+    const dispatch = useDispatch();
     const currentDate = new Date();
     const gameReleaseDate = new Date(game.releaseDate);
 
