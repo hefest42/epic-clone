@@ -176,6 +176,10 @@ header {
     width: 90rem;
     height: 6rem;
     margin: 0 auto;
+    background-color: rgb(18, 18, 18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     display: flex;
     justify-content: space-between;
@@ -228,13 +232,6 @@ header {
             margin-left: 1rem;
         }
     }
-}
-
-.subheader-sticky {
-    background-color: rgb(18, 18, 18);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .footer {

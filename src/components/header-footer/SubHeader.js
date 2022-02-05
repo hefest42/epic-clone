@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { NavLink } from "react-router-dom";
 
 const SubHeader = () => {
-    const [stickySubHeader, setStickySubHeader] = useState(false);
+    // useEffect(() => {
+    //     if (typeof window !== "undefined") {
+    //         window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
+    //     }
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
-        }
-
-        return () => setStickySubHeader(false);
-    }, []);
+    //     return () => setStickySubHeader(false);
+    // }, []);
 
     return (
-        <div className={`${stickySubHeader ? "subheader subheader-sticky" : "subheader"}`}>
+        <div className="subheader">
             <div className="subheader-left">
                 <form action="">
                     <span>&#128269;</span>
