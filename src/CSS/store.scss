@@ -386,7 +386,7 @@ section {
             width: 95%;
             margin-top: 1rem;
 
-            &-game {
+            &-inactive {
                 color: #fff;
                 height: 10rem;
                 border-radius: 10px;
@@ -394,10 +394,17 @@ section {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
 
-                &:hover {
-                    background-color: $secondary-gray;
-                }
+            &-active {
+                background-color: $secondary-gray;
+                color: #fff;
+                height: 10rem;
+                border-radius: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
