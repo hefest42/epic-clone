@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
+
+import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { addGamesToWishlist } from "../../store/AccountSlice";
 
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+import { shortMonths } from "../../store/helperFunctions";
 
 const Poster = ({ poster, game, index, slideNumber, cover }) => {
     const dispatch = useDispatch();
@@ -11,35 +13,30 @@ const Poster = ({ poster, game, index, slideNumber, cover }) => {
     const gameReleaseDate = new Date(game.releaseDate);
 
     return (
-        <div className="poster" style={{ transform: `translateX(${(index - slideNumber) * 100}%)` }}>
-            <img src={poster} alt="" />
-
-            {cover && (
-                <div className="poster-cover">
-                    <div className="poster-cover__info">
-                        <div className="poster-cover__info-top">
+        <Fragment>
+            <Link to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
+                <div className="poster" style={{ transform: `translateX(${(index - slideNumber) * 100}%)` }}>
+                    <img src={poster} alt={`${game.name} poster`} />
+                    <div className="poster-cover">
+                        <div className="poster-cover__information">
                             <h3>
-                                {currentDate < gameReleaseDate
-                                    ? `Out ${monthNames[gameReleaseDate.getMonth()]} ${gameReleaseDate.getDate()}`
-                                    : "Out Now"}
+                                {currentDate > gameReleaseDate
+                                    ? `Out Now`
+                                    : `Out ${shortMonths[gameReleaseDate.getMonth()]}/${gameReleaseDate.getDate()}`}
                             </h3>
                             <p>{game.shortDescription}</p>
                         </div>
-
-                        <div className="poster-cover__info-bottom">
-                            <h3>{`$${game.price}`}</h3>
-                            <div className="poster-buttons">
-                                <button className="poster-buttons__buy">{currentDate > gameReleaseDate ? "BUY NOW" : "PRE-PURCHASE"}</button>
-                                <button className="poster-buttons__wishlist">
-                                    <span>+</span>
-                                    <p>ADD TO WISHLIST</p>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            )}
-        </div>
+            </Link>
+
+            <div className="poster-buttons centered">
+                <button>{!currentDate > gameReleaseDate ? "PRE-PURCHASE NOW" : "BUY NOW"}</button>
+                <button className="centered" onClick={() => dispatch(addGamesToWishlist(game))}>
+                    <span className="centered">+</span> ADD TO WISHLIST
+                </button>
+            </div>
+        </Fragment>
     );
 };
 

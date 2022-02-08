@@ -20,14 +20,26 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                         onMouseLeave={() => setShowFirstWishlistButton(false)}
                     >
                         <img src={firstGame.posterBig} alt="" />
-                        <div className="poster-cover__white">
-                            {showFirstWishlistButton && <button onClick={() => dispatch(addGamesToWishlist(firstGame))}>+</button>}
-                        </div>
+                        <div className="poster-cover__white"></div>
                     </div>
                     <h2 className="featured-container__title">{firstGame.name}</h2>
                 </Link>
                 <div className="featured-container__description">{firstGame.shortDescription} </div>
                 {firstGame.price && <h2 className="featured-container__price">${firstGame.price}</h2>}
+
+                {showFirstWishlistButton && (
+                    <button
+                        className="wishlist-button__small"
+                        style={{
+                            top: "3%",
+                            right: "3%",
+                        }}
+                        onMouseEnter={() => setShowFirstWishlistButton(true)}
+                        onMouseLeave={() => setShowFirstWishlistButton(false)}
+                    >
+                        +
+                    </button>
+                )}
             </div>
 
             <div className="featured-container">
@@ -56,6 +68,20 @@ const FeaturedGames = ({ firstGame, secondGame }) => {
                 </Link>
                 <div className="featured-container__description">{secondGame.shortDescription}</div>
                 {secondGame.price && <h2 className="featured-container__price">${secondGame.price}</h2>}
+
+                {showSecondWishlistButton && (
+                    <button
+                        className="wishlist-button__small"
+                        style={{
+                            top: "3%",
+                            right: "3%",
+                        }}
+                        onMouseEnter={() => setShowSecondWishlistButton(true)}
+                        onMouseLeave={() => setShowSecondWishlistButton(false)}
+                    >
+                        +
+                    </button>
+                )}
             </div>
         </section>
     );

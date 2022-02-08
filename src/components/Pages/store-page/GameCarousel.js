@@ -2,13 +2,17 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { addGamesToWishlist } from "../../../store/AccountSlice";
+
 import { calcDiscount, calcPercentage } from "../../../store/helperFunctions";
 
 // FIX THE CAROUSEL MOVEMENT
 // 243.2
 // 6.25%
 const GameCarousel = ({ title, games }) => {
-    const [showWishlistButton, setShowWishlistButton] = useState(false);
+    const dispatch = useDispatch();
+    const [showWishlistButton, setShowWishlistButton] = useState("");
     const [posterWidth, setPosterWidth] = useState(calcPercentage(243.2, games.length * 243.2));
     const [posterNumber, setPosterNumber] = useState(0);
     const [slideNumber, setSlideNumber] = useState(0);
@@ -42,11 +46,11 @@ const GameCarousel = ({ title, games }) => {
     return (
         <section className="game-carousel">
             <div className="game-carousel__title">
-                <div className="game-carousel__title-left">
+                <div className="game-carousel__title-left centered">
                     <h3>{title}</h3>
                     <span>&#x203A;</span>
                 </div>
-                <div className="game-carousel__title-right">
+                <div className="game-carousel__title-right centered">
                     <button className="carousel-button" onClick={moveCarouselLeft}>
                         &#x2039;
                     </button>
@@ -56,35 +60,49 @@ const GameCarousel = ({ title, games }) => {
                 </div>
             </div>
 
-            <div className="game-carousel__container" style={{ transform: `translateX(-${posterWidth * posterNumber}%)` }}>
+            <div className="game-carousel__container " style={{ transform: `translateX(-${posterWidth * posterNumber}%)` }}>
                 {games.map((game, i) => (
-                    <Link key={i} to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
-                        <div
-                            className="game-carousel__poster"
-                            onMouseEnter={() => setShowWishlistButton(i)}
-                            onMouseLeave={() => setShowWishlistButton(100)}
-                        >
-                            <div className="game-carousel__poster-top">
-                                <img src={game.posterSmall} alt={`${game.name} poster`} />
-                                <div className="poster-cover__white">{showWishlistButton === i && <button>+</button>}</div>
-                            </div>
-
-                            <div className="game-carousel__poster-bottom">
-                                <h4>{game.name}</h4>
-                                <div>
-                                    {game.gameOnSale ? (
-                                        <div className="game-on-sale">
-                                            <span>-{game.discount}%</span>
-                                            <span>${game.price}</span>
-                                            <span>${calcDiscount(game.price, game.discount).toFixed(2)}</span>
-                                        </div>
-                                    ) : (
-                                        <h4 className="game-not-on-sale">{game.price ? `$${game.price}` : "Free"}</h4>
-                                    )}
+                    <div key={i} style={{ position: "relative" }}>
+                        <Link to={`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
+                            <div className="game-carousel__item">
+                                <div className="game-carousel__item-image">
+                                    <img src={game.posterSmall} alt="" />
+                                    <div
+                                        className="poster-cover__white"
+                                        onMouseEnter={() => setShowWishlistButton(i)}
+                                        onMouseLeave={() => setShowWishlistButton(1000)}
+                                    ></div>
                                 </div>
+                                <h4>{game.name}</h4>
+                                {game.gameOnSale ? (
+                                    <div className="game-on-sale">
+                                        <span>{`-${game.discount}%`}</span>
+                                        <span>{`$${game.price}`}</span>
+                                        <span>{`$${calcDiscount(game.price, game.discount).toFixed(2)}`}</span>
+                                    </div>
+                                ) : (
+                                    <div className="game-not-on-sale">{game.price ? `$${game.price}` : "Free"}</div>
+                                )}
                             </div>
-                        </div>
-                    </Link>
+                        </Link>
+
+                        {showWishlistButton === i ? (
+                            <button
+                                className="wishlist-button__small"
+                                style={{
+                                    top: "3%",
+                                    right: "10%",
+                                }}
+                                onMouseEnter={() => setShowWishlistButton(i)}
+                                onMouseLeave={() => setShowWishlistButton(1000)}
+                                onClick={() => dispatch(addGamesToWishlist(game))}
+                            >
+                                +
+                            </button>
+                        ) : (
+                            ""
+                        )}
+                    </div>
                 ))}
             </div>
         </section>
