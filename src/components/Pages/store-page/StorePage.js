@@ -39,7 +39,7 @@ const StorePage = () => {
                                 firstGame={GAMES.find(game => game.name === "STRANGER OF PARADISE FINAL FANTASY ORIGIN")}
                                 secondGame={GAMES.find(game => game.name === "Rocket League")}
                             />
-                            <FreeGames
+                            {/* <FreeGames
                                 firstGame={GAMES.find(game => game.name === "Sifu")}
                                 secondGame={GAMES.find(game => game.name === "Rainbow Six: Extraction")}
                             />
@@ -50,7 +50,7 @@ const StorePage = () => {
                             />
                             <GameCarousel title="Recently Updated" games={GAMES.slice().sort((a, b) => a.name.localeCompare(b.name))} />
                             <GameCarousel title="Most Popular" games={GAMES.slice().sort((a, b) => a.price - b.price)} />
-                            <DiscoverBottomFeature />
+                            <DiscoverBottomFeature /> */}
                             <Footer />
                         </div>
                     }
