@@ -32,75 +32,57 @@ $error-secondary: #d54841;
         z-index: 150;
         cursor: pointer;
 
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
+        &__information {
+            position: absolute;
+            top: 60%;
+            left: 2%;
+            width: 21rem;
+            z-index: 200;
 
-        &__info {
-            margin: 0 0 4rem 2rem;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            &-top {
-                p {
-                    width: 20rem;
-                    font-size: 1.2rem;
-                    line-height: 1.7rem;
-                    margin-top: 1rem;
-                }
-            }
-
-            &-bottom {
-                margin-top: 2rem;
+            p {
+                margin-top: 1rem;
             }
         }
     }
 
     &-buttons {
-        display: flex;
-        margin-top: 1rem;
+        position: absolute;
+        top: 80%;
+        left: 2%;
+        z-index: 201;
 
         button {
-            height: 3rem;
-            border-radius: 5px;
-            border: none;
+            font-size: 0.8rem;
             cursor: pointer;
         }
 
-        &__buy {
-            width: 10rem;
+        :nth-child(1) {
+            width: 11rem;
+            height: 3.5rem;
+            border: none;
+            border-radius: 3px;
         }
 
-        &__wishlist {
+        :nth-child(2) {
             background-color: transparent;
             color: #fff;
-            width: 12.5rem;
+            width: 13rem;
+            height: 3.5rem;
+            margin-left: 1rem;
+            border: none;
+            border-radius: 3px;
 
-            margin-left: 0.5rem;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.315);
+            }
 
             span {
                 background-color: black;
-                margin-right: 1rem;
                 width: 25px;
                 height: 25px;
-                font-size: 0.9rem;
-                font-weight: bold;
-                border-radius: 50%;
+                margin-right: 0.5rem;
                 border: 2px solid #fff;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
             }
         }
     }
