@@ -89,6 +89,10 @@ const GameCarousel = ({ title, games }) => {
                         {showWishlistButton === i ? (
                             <button
                                 className="wishlist-button__small"
+                                style={{
+                                    top: "3%",
+                                    right: "10%",
+                                }}
                                 onMouseEnter={() => setShowWishlistButton(i)}
                                 onMouseLeave={() => setShowWishlistButton(1000)}
                                 onClick={() => dispatch(addGamesToWishlist(game))}
