@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import GamePageCarousel from "./GamePageCarousel";
+import GamePageInformation from "./GamePageInformation";
 
 const GamePageOverview = ({ game }) => {
     const gameReleaseDate = new Date(game.releaseDate);
+    const [showMore, setShowMore] = useState(true);
 
     return (
-        <div className="gamePage-overview centered">
+        <div
+            className="gamePage-overview"
+            style={{
+                height: `${showMore ? "" : "25rem"}`,
+            }}
+        >
             <div className="gamePage-overview__left">
                 <GamePageCarousel game={game} />
+                <GamePageInformation game={game} />
             </div>
 
             <div className="gamePage-overview__right">
@@ -30,7 +38,7 @@ const GamePageOverview = ({ game }) => {
                     </div>
                     <div className="gamePage-overview__right-details-studio">
                         <span>Release Date</span>
-                        <div>{`${gameReleaseDate.getDate()}/${gameReleaseDate.getMonth()}/${gameReleaseDate.getFullYear()}`}</div>
+                        <div>{`${gameReleaseDate.getDate()}/${gameReleaseDate.getMonth() + 1}/${gameReleaseDate.getFullYear()}`}</div>
                     </div>
                 </div>
             </div>

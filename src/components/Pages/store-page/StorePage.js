@@ -56,7 +56,6 @@ const StorePage = () => {
                                 <GameCarousel title="Recently Updated" games={GAMES.slice().sort((a, b) => a.name.localeCompare(b.name))} />
                                 <GameCarousel title="Most Popular" games={GAMES.slice().sort((a, b) => a.price - b.price)} />
                                 <DiscoverBottomFeature />
-                                <Footer />
                             </div>
                         }
                     />
@@ -65,6 +64,7 @@ const StorePage = () => {
                     <Route path="/p/:game" element={<GamePage />} />
                 </Routes>
             </section>
+            <Footer />
         </Container>
     );
 };

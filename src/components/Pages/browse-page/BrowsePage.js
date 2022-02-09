@@ -9,7 +9,6 @@ const BrowsePage = () => {
         <div className="browse">
             <PopularGenresCarousel />
             <GamesBrowseList />
-            <Footer />
         </div>
     );
 };

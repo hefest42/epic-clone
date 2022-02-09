@@ -60,7 +60,6 @@ const Wishlist = () => {
                     <LogInWarning warning="You have no games on your Wishlist" showFooter={false} />
                 )}
             </div>
-            <Footer />
         </section>
     );
 };
