@@ -69,6 +69,7 @@ const GameCarousel = ({ title, games }) => {
                                     <img src={game.posterSmall} alt="" />
                                     <div
                                         className="poster-cover__white"
+                                        style={{ borderRadius: "0" }}
                                         onMouseEnter={() => setShowWishlistButton(i)}
                                         onMouseLeave={() => setShowWishlistButton(1000)}
                                     ></div>
