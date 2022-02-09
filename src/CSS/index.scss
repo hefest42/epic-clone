@@ -6,6 +6,7 @@
 @import "./UI.scss";
 @import "./create-account.scss";
 @import "./wishlist-cart.scss";
+@import "./game-page.scss";
 
 $main-gray: #2a2a2a;
 $secondary-gray: #2a2a2a8f;
@@ -26,6 +27,10 @@ body {
     font-family: "Electrolize", sans-serif;
     // background-color: teal;
     background-color: rgb(18, 18, 18);
+    width: 100%;
+}
+
+.container {
     width: 100%;
 }
 
