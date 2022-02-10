@@ -11,12 +11,15 @@ const GamePageOverview = ({ game }) => {
         <div
             className="gamePage-overview"
             style={{
-                height: `${showMore ? "" : "25rem"}`,
+                height: `${showMore ? "" : "60rem"}`,
             }}
         >
             <div className="gamePage-overview__left">
                 <GamePageCarousel game={game} />
                 <GamePageInformation game={game} />
+                <button className="gamePage-overview__left-showMore" onClick={() => setShowMore(state => !state)}>
+                    {!showMore ? "Show More" : "Show Less"}
+                </button>
             </div>
 
             <div className="gamePage-overview__right">

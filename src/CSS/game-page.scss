@@ -61,7 +61,9 @@ $error-secondary: #d54841;
             height: 100%;
 
             &-showMore {
-                width: 100%;
+                position: absolute;
+                bottom: 0;
+                width: 70%;
                 height: 3rem;
             }
         }
@@ -78,7 +80,7 @@ $error-secondary: #d54841;
                 color: #fff;
                 width: 85%;
                 position: sticky;
-                top: 10rem;
+                top: 0rem;
                 z-index: 998;
 
                 display: flex;
