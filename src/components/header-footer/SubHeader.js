@@ -1,8 +1,11 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const SubHeader = () => {
+    const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
+
     // useEffect(() => {
     //     if (typeof window !== "undefined") {
     //         window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
@@ -33,12 +36,17 @@ const SubHeader = () => {
             </div>
 
             <div className="subheader-right">
-                <NavLink to="wishlist" className={navData => (navData.isActive ? "link-active" : "link")}>
-                    Wishlist
-                </NavLink>
-                <NavLink to="cart" className={navData => (navData.isActive ? "link-active" : "link")}>
-                    Cart
-                </NavLink>
+                {isLoggedIn && (
+                    <NavLink to="wishlist" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        Wishlist
+                    </NavLink>
+                )}
+
+                {isLoggedIn && (
+                    <NavLink to="cart" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        Cart
+                    </NavLink>
+                )}
             </div>
         </div>
     );

@@ -2,25 +2,21 @@ import React, { useState, Fragment } from "react";
 
 import WishlistItem from "./WishlistItem";
 import GamesBrowseFilters from "../browse-page/GamesBrowseFilters";
-import Footer from "../../header-footer/Footer";
 import LogInWarning from "../../UI/LogInWarning";
 
 import { useSelector } from "react-redux";
 
-import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
-
 const Wishlist = () => {
     const [showDropdownMenu, setShowDropdownMenu] = useState();
     const account = useSelector(state => state.loggedInAccount.account);
-
-    console.log(account.wishlist ? "yes" : "no");
+    const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
 
     return (
         <section className="wishlist centered-column">
             <div className="wishlist-wrapper">
                 <h1>Wishlist</h1>
 
-                {account.wishlist.length > 0 ? (
+                {isLoggedIn && account.wishlist.length > 0 ? (
                     <Fragment>
                         <div className="browseList-buttons__left">
                             <button className="centered" onClick={() => setShowDropdownMenu(state => !state)}>
@@ -57,7 +53,7 @@ const Wishlist = () => {
                         </div>
                     </Fragment>
                 ) : (
-                    <LogInWarning warning="You have no games on your Wishlist" showFooter={false} />
+                    <LogInWarning warning="You have no games on your Wishlist" />
                 )}
             </div>
         </section>

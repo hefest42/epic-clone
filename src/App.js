@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import StorePage from "./components/Pages/store-page/StorePage";
 import CreateAccount from "./components/Pages/account/CreateAccount";
 import LogIn from "./components/Pages/account/LogIn";
-import GamePage from "./components/Pages/game-page/GamePage";
 
 function App() {
     return (

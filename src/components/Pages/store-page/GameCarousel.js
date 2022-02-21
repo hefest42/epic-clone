@@ -7,9 +7,6 @@ import { addGamesToWishlist } from "../../../store/AccountSlice";
 
 import { calcDiscount, calcPercentage } from "../../../store/helperFunctions";
 
-// FIX THE CAROUSEL MOVEMENT
-// 243.2
-// 6.25%
 const GameCarousel = ({ title, games }) => {
     const dispatch = useDispatch();
     const [showWishlistButton, setShowWishlistButton] = useState("");

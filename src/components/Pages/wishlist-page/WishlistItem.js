@@ -1,8 +1,17 @@
 import React from "react";
 
+import { useDispatch } from "react-redux";
+import { removeGamesFromWishlist } from "../../../store/AccountSlice";
+
 import { calcDiscount } from "../../../store/helperFunctions";
 
 const WishlistItem = ({ game }) => {
+    const dispatch = useDispatch();
+
+    const removeGamesFromWishlistHandler = () => {
+        dispatch(removeGamesFromWishlist(game));
+    };
+
     return (
         <div className="wishlistItem centered">
             <div className="wishlistItem-inner space-between">
@@ -28,7 +37,7 @@ const WishlistItem = ({ game }) => {
                     <div className="wishlistItem-inner__right-buttons space-between">
                         <div></div>
                         <div className="centered">
-                            <p>Remove</p>
+                            <p onClick={removeGamesFromWishlistHandler}>Remove</p>
                             <button>ADD TO CART</button>
                         </div>
                     </div>

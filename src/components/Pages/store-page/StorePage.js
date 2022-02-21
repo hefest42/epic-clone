@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -12,10 +12,11 @@ import FreeGames from "./FreeGames";
 import NewTopComing from "./NewTopComing";
 import DiscoverBottomFeature from "./DiscoverBottomFeature";
 import Footer from "../../header-footer/Footer";
-import GamePage from "../game-page/GamePage";
+import Wishlist from "../wishlist-page/Wishlist";
+import Cart from "../wishlist-page/Cart";
 
+import GamePage from "../game-page/GamePage";
 import BrowsePage from "../browse-page/BrowsePage";
-import WishlistPage from "../wishlist-page/WishlistPage";
 
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
@@ -60,7 +61,8 @@ const StorePage = () => {
                         }
                     />
                     <Route path="/browse" element={<BrowsePage />} />
-                    <Route path="/wishlist" element={<WishlistPage />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/cart" element={<Cart />} />
                     <Route path="/p/:game" element={<GamePage />} />
                 </Routes>
             </section>
