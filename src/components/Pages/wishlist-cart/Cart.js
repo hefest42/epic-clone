@@ -1,5 +1,7 @@
 import React from "react";
 
+import CartItem from "./CartItem";
+
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -10,8 +12,10 @@ const Cart = () => {
     return (
         <div className="cart">
             <div className="cart-title">My Cart</div>
-            <div className="cart-items centered">
-                <div className="cart-left"></div>
+            <div className="cart-items ">
+                <div className="cart-left">
+                    <CartItem />
+                </div>
 
                 <div className="cart-right">
                     <div className="cart-summary centered-column">
