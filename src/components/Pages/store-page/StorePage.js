@@ -12,8 +12,8 @@ import FreeGames from "./FreeGames";
 import NewTopComing from "./NewTopComing";
 import DiscoverBottomFeature from "./DiscoverBottomFeature";
 import Footer from "../../header-footer/Footer";
-import Wishlist from "../wishlist-page/Wishlist";
-import Cart from "../wishlist-page/Cart";
+import Wishlist from "../wishlist-cart/Wishlist";
+import Cart from "../wishlist-cart/Cart";
 
 import GamePage from "../game-page/GamePage";
 import BrowsePage from "../browse-page/BrowsePage";
