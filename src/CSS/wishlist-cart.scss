@@ -136,7 +136,8 @@ $error-secondary: #d54841;
     align-items: flex-start;
 
     &-title {
-        font-size: 2.5rem;
+        color: #fff;
+        font-size: 3.5rem;
         margin-bottom: 1rem;
     }
 
@@ -204,25 +205,56 @@ $error-secondary: #d54841;
 }
 
 .cartItem {
-    background-color: teal;
+    background-color: $main-gray;
     width: 100%;
-    height: 18rem;
+    height: 15rem;
 
     &-inner {
-        background-color: peru;
         width: 95%;
         height: 95%;
     }
 
     &-image {
-        background-color: rebeccapurple;
         width: 21%;
         height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &-information {
-        background-color: purple;
         width: 79%;
         height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__name {
+            color: #fff;
+            width: 100%;
+            font-size: 1.3rem;
+        }
+
+        &__buttons {
+            width: 100%;
+            height: 2rem;
+
+            button {
+                background-color: transparent;
+                color: $main-link;
+                font-size: 1.2rem;
+                border: none;
+                text-decoration: underline;
+                margin-left: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
     }
 }
