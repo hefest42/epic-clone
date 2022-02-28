@@ -44,12 +44,8 @@ const GamesBrowseFilters = () => {
     const [activeFilters, setActiveFilters] = useState([]);
 
     const addFilter = term => {
-        if (activeFilters.includes(term)) {
-            const index = activeFilters.findIndex(filterTerm => filterTerm === term);
-
-            setActiveFilters(activeFilters.filter(filterTerm => filterTerm !== term));
-            console.log(activeFilters);
-        } else setActiveFilters(state => [...state, term]);
+        if (activeFilters.includes(term)) setActiveFilters(activeFilters.filter(filterTerm => filterTerm !== term));
+        else setActiveFilters(state => [...state, term]);
     };
 
     return (
