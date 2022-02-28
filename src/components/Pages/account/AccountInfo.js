@@ -44,6 +44,7 @@ const AccountInfo = ({ birthYearData }) => {
             birthDay: birthYearData,
             newsletter: newsletterRef.current.checked,
             wishlist: [],
+            library: [],
         });
 
         navigate("/log-in");

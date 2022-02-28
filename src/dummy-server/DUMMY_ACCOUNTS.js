@@ -8,5 +8,6 @@ export const ACCOUNTS = [
         birthDay: "2000.01.01",
         newsletter: false,
         wishlist: [],
+        library: [],
     },
 ];

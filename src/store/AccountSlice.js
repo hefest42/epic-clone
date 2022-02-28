@@ -5,6 +5,7 @@ const accountSlice = createSlice({
     initialState: {
         loggedIn: false,
         account: {},
+        cart: [],
     },
     reducers: {
         setAccount(state, action) {
@@ -28,6 +29,9 @@ const accountSlice = createSlice({
         removeGamesFromWishlist(state, action) {
             state.account.wishlist = state.account.wishlist.filter(game => game.name !== action.payload.name);
         },
+
+        addGamesToCart(state, action) {},
+        removeGamesFromCart(state, action) {},
     },
 });
 
