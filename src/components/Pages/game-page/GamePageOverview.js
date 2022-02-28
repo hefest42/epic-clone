@@ -5,6 +5,7 @@ import GamePageInformation from "./GamePageInformation";
 
 import { useDispatch } from "react-redux";
 import { addGamesToWishlist, addGamesToCart } from "../../../store/AccountSlice";
+import { calcDiscount } from "../../../store/helperFunctions";
 
 const GamePageOverview = ({ game }) => {
     const dispatch = useDispatch();
@@ -29,7 +30,17 @@ const GamePageOverview = ({ game }) => {
             <div className="gamePage-overview__right">
                 <div className="gamePage-overview__right-details">
                     <div className="gamePage-overview__right-details-logo centered">LOGO</div>
-                    <div className="gamePage-overview__right-details-price">${game.price}</div>
+                    <div className="gamePage-overview__right-details-price">
+                        {game.gameOnSale ? (
+                            <div className="game-on-sale">
+                                <span>-%{game.discount}</span>
+                                <span>{`$${game.price}`}</span>
+                                <span>{`$${calcDiscount(game.price, game.discount).toFixed(2)}`}</span>
+                            </div>
+                        ) : (
+                            `$${game.price}`
+                        )}
+                    </div>
                     <button className="gamePage-overview__right-details-buy">BUY NOW</button>
                     <button className="gamePage-overview__right-details-cart" onClick={() => dispatch(addGamesToCart(game))}>
                         ADD TO CART

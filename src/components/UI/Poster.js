@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { addGamesToWishlist } from "../../store/AccountSlice";
@@ -9,16 +9,9 @@ import { shortMonths } from "../../store/helperFunctions";
 
 const Poster = ({ poster, game, index, slideNumber, allGames }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const currentDate = new Date();
     const gameReleaseDate = new Date(game.releaseDate);
-
-    const addGamesToWishlistHandler = () => {
-        const wishlistedGame = allGames[index];
-
-        console.log(index);
-
-        dispatch(addGamesToWishlist(wishlistedGame));
-    };
 
     return (
         <Fragment>
@@ -39,8 +32,10 @@ const Poster = ({ poster, game, index, slideNumber, allGames }) => {
             </Link>
 
             <div className="poster-buttons centered" style={{ display: `${index === slideNumber ? "" : "none"}` }}>
-                <button>{!currentDate > gameReleaseDate ? "PRE-PURCHASE NOW" : "BUY NOW"}</button>
-                <button className="centered" onClick={addGamesToWishlistHandler}>
+                <button onClick={() => navigate(`p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`)}>
+                    {!currentDate > gameReleaseDate ? "PRE-PURCHASE NOW" : "BUY NOW"}
+                </button>
+                <button className="centered" onClick={() => dispatch(addGamesToWishlist(game))}>
                     <span className="centered">+</span> ADD TO WISHLIST
                 </button>
             </div>
