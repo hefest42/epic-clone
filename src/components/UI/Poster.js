@@ -7,10 +7,18 @@ import { addGamesToWishlist } from "../../store/AccountSlice";
 
 import { shortMonths } from "../../store/helperFunctions";
 
-const Poster = ({ poster, game, index, slideNumber, cover }) => {
+const Poster = ({ poster, game, index, slideNumber, allGames }) => {
     const dispatch = useDispatch();
     const currentDate = new Date();
     const gameReleaseDate = new Date(game.releaseDate);
+
+    const addGamesToWishlistHandler = () => {
+        const wishlistedGame = allGames[index];
+
+        console.log(index);
+
+        dispatch(addGamesToWishlist(wishlistedGame));
+    };
 
     return (
         <Fragment>
@@ -30,9 +38,9 @@ const Poster = ({ poster, game, index, slideNumber, cover }) => {
                 </div>
             </Link>
 
-            <div className="poster-buttons centered">
+            <div className="poster-buttons centered" style={{ display: `${index === slideNumber ? "" : "none"}` }}>
                 <button>{!currentDate > gameReleaseDate ? "PRE-PURCHASE NOW" : "BUY NOW"}</button>
-                <button className="centered" onClick={() => dispatch(addGamesToWishlist(game))}>
+                <button className="centered" onClick={addGamesToWishlistHandler}>
                     <span className="centered">+</span> ADD TO WISHLIST
                 </button>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDispatch } from "react-redux";
-import { removeGamesFromWishlist } from "../../../store/AccountSlice";
+import { removeGamesFromWishlist, addGamesToCart } from "../../../store/AccountSlice";
 
 import { calcDiscount } from "../../../store/helperFunctions";
 
@@ -38,7 +38,7 @@ const WishlistItem = ({ game }) => {
                         <div></div>
                         <div className="centered">
                             <p onClick={removeGamesFromWishlistHandler}>Remove</p>
-                            <button>ADD TO CART</button>
+                            <button onClick={() => dispatch(addGamesToCart(game))}>ADD TO CART</button>
                         </div>
                     </div>
                 </div>

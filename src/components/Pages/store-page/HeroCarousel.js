@@ -30,7 +30,7 @@ const HeroCarousel = ({ games }) => {
         <section className="hero">
             <div className="hero-left">
                 {games.map((game, i) => (
-                    <Poster key={i} poster={game.posterBig} game={game} index={i} slideNumber={currentSlide} cover={true} />
+                    <Poster key={i} poster={game.posterBig} game={game} index={i} slideNumber={currentSlide} allGames={games} />
                 ))}
             </div>
 
