@@ -36,7 +36,7 @@ const SubHeader = () => {
                 )}
 
                 {isLoggedIn && (
-                    <NavLink to="cart centered" className={navData => (navData.isActive ? "link-active" : "link")}>
+                    <NavLink to="cart" className={navData => (navData.isActive ? "link-active" : "link")}>
                         <p>Cart</p>
                     </NavLink>
                 )}
