@@ -1,15 +1,21 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 import WishlistItem from "./WishlistItem";
 import GamesBrowseFilters from "../browse-page/GamesBrowseFilters";
 import LogInWarning from "../../UI/LogInWarning";
 
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Wishlist = () => {
+    const navigate = useNavigate();
     const [showDropdownMenu, setShowDropdownMenu] = useState();
     const account = useSelector(state => state.loggedInAccount.account);
     const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
+
+    useEffect(() => {
+        if (!isLoggedIn) navigate("/log-in");
+    }, [isLoggedIn, navigate]);
 
     return (
         <section className="wishlist centered-column">

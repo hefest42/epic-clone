@@ -14,6 +14,8 @@ const Cart = () => {
     const [totalPrice, setTotalPrice] = useState("0");
 
     useEffect(() => {
+        if (!isLoggedIn) navigate("/log-in");
+
         let prices = 0;
 
         cartGames.forEach(game => {
@@ -22,7 +24,7 @@ const Cart = () => {
         });
 
         setTotalPrice(Number(prices).toFixed(2));
-    }, [cartGames]);
+    }, [cartGames, isLoggedIn, navigate]);
 
     return (
         <div className="cart">
