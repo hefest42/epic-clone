@@ -83,6 +83,10 @@ $error-secondary: #d54841;
                 top: 0rem;
                 z-index: 998;
 
+                button {
+                    cursor: pointer;
+                }
+
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -116,6 +120,10 @@ $error-secondary: #d54841;
                     margin-bottom: 0.5rem;
                     border: 1px solid $border-gray;
                     border-radius: 3px;
+
+                    &:hover {
+                        background-color: $secondary-gray;
+                    }
                 }
 
                 &-wishlist {
@@ -126,6 +134,10 @@ $error-secondary: #d54841;
                     margin-bottom: 0.5rem;
                     border: 1px solid $border-gray;
                     border-radius: 3px;
+
+                    &:hover {
+                        background-color: $secondary-gray;
+                    }
                 }
 
                 &-studio {
