@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import GamesBrowseFilters from "./GamesBrowseFilters";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { addGamesToWishlist } from "../../../store/AccountSlice";
+
 import { calcDiscount } from "../../../store/helperFunctions";
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
-import { useState } from "react/cjs/react.development";
 
 const GamesBrowseList = () => {
+    const dispatch = useDispatch();
     const [showWishlistButton, setShowWishlistButton] = useState("");
     const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
@@ -80,6 +83,7 @@ const GamesBrowseList = () => {
                                     }}
                                     onMouseEnter={() => setShowWishlistButton(i)}
                                     onMouseLeave={() => setShowWishlistButton(-1)}
+                                    onClick={() => dispatch(addGamesToWishlist(game))}
                                 >
                                     +
                                 </button>
