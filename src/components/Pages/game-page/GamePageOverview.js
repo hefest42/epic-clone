@@ -9,7 +9,7 @@ import { addGamesToWishlist, addGamesToCart } from "../../../store/AccountSlice"
 const GamePageOverview = ({ game }) => {
     const dispatch = useDispatch();
     const gameReleaseDate = new Date(game.releaseDate);
-    const [showMore, setShowMore] = useState(true);
+    const [showMore, setShowMore] = useState(false);
 
     return (
         <div
