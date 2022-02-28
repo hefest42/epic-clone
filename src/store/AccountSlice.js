@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const accountSlice = createSlice({
     name: "account",
@@ -30,11 +30,30 @@ const accountSlice = createSlice({
             state.account.wishlist = state.account.wishlist.filter(game => game.name !== action.payload.name);
         },
 
-        addGamesToCart(state, action) {},
-        removeGamesFromCart(state, action) {},
+        addGamesToCart(state, action) {
+            if (!state.loggedIn) return;
+
+            if (state.cart.find(game => game.name === action.payload.name)) return;
+
+            state.cart.push(action.payload);
+        },
+
+        removeGamesFromCart(state, action) {
+            state.cart = state.cart.filter(game => game.name !== action.payload.name);
+        },
+
+        moveGamesToWishlist(state, action) {
+            if (!state.loggedIn) return;
+
+            if (state.account.wishlist.find(game => game.name === action.payload.name)) return;
+
+            state.account.wishlist.push(action.payload);
+            state.cart = state.cart.filter(game => game.name !== action.payload.name);
+        },
     },
 });
 
-export const { setAccount, logOutAccount, addGamesToWishlist, removeGamesFromWishlist } = accountSlice.actions;
+export const { setAccount, logOutAccount, addGamesToWishlist, removeGamesFromWishlist, addGamesToCart, removeGamesFromCart, moveGamesToWishlist } =
+    accountSlice.actions;
 
 export default accountSlice.reducer;

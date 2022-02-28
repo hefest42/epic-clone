@@ -5,14 +5,7 @@ import { useSelector } from "react-redux";
 
 const SubHeader = () => {
     const isLoggedIn = useSelector(state => state.loggedInAccount.loggedIn);
-
-    // useEffect(() => {
-    //     if (typeof window !== "undefined") {
-    //         window.addEventListener("scroll", () => setStickySubHeader(window.pageYOffset > 70));
-    //     }
-
-    //     return () => setStickySubHeader(false);
-    // }, []);
+    const cartGames = useSelector(state => state.loggedInAccount.cart);
 
     return (
         <div className="subheader">
@@ -35,7 +28,7 @@ const SubHeader = () => {
                 </div>
             </div>
 
-            <div className="subheader-right">
+            <div className="subheader-right centered">
                 {isLoggedIn && (
                     <NavLink to="wishlist" className={navData => (navData.isActive ? "link-active" : "link")}>
                         Wishlist
@@ -43,10 +36,11 @@ const SubHeader = () => {
                 )}
 
                 {isLoggedIn && (
-                    <NavLink to="cart" className={navData => (navData.isActive ? "link-active" : "link")}>
-                        Cart
+                    <NavLink to="cart centered" className={navData => (navData.isActive ? "link-active" : "link")}>
+                        <p>Cart</p>
                     </NavLink>
                 )}
+                {cartGames.length === 0 ? "" : <div className="subheader-right__cart">{cartGames.length}</div>}
             </div>
         </div>
     );
