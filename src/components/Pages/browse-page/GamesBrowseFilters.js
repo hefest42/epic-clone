@@ -12,20 +12,13 @@ const platforms = ["Windows", "Mac OS"];
 const GamesBrowseFilters = () => {
     const location = useLocation();
     const navigation = useNavigate();
-    const searchParams = new URLSearchParams(location.search);
-    const [activeFilters, setActiveFilters] = useState(
-        searchParams
-            .toString()
-            .split("&")
-            .map(str => str.split("=")[1])
-    );
 
-    const [showEvents, setShowEvents] = useState(false);
-    const [showPrice, setShowPrice] = useState(false);
-    const [showGenre, setShowGenre] = useState(false);
-    const [showFeature, setShowFeature] = useState(false);
-    const [showTypes, setShowTypes] = useState(false);
-    const [showPlatform, setShowPlatform] = useState(false);
+    const [showEvents, setShowEvents] = useState(true);
+    const [showPrice, setShowPrice] = useState(true);
+    const [showGenre, setShowGenre] = useState(true);
+    const [showFeature, setShowFeature] = useState(true);
+    const [showTypes, setShowTypes] = useState(true);
+    const [showPlatform, setShowPlatform] = useState(true);
 
     const allGenres = [
         ...new Set(
@@ -34,6 +27,20 @@ const GamesBrowseFilters = () => {
                 .sort((a, b) => a.localeCompare(b))
         ),
     ];
+
+    const searchParams = new URLSearchParams(location.search);
+
+    const [activeFilters, setActiveFilters] = useState(
+        location.search === ""
+            ? []
+            : searchParams
+                  .toString()
+                  .split("&")
+                  .map(str => {
+                      if (str.split("=")[1].includes("+")) return str.split("=")[1].replace("+", " ");
+                      else return str.split("=")[1];
+                  })
+    );
 
     const addFilter = term => {
         if (activeFilters.includes(term)) setActiveFilters(activeFilters.filter(filterTerm => filterTerm !== term));
