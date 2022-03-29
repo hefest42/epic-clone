@@ -35,6 +35,7 @@ export const GAMES = [
         discount: "",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Action", "Open World", "Exploration"],
     },
     {
         name: "Far Cry 6",
@@ -46,6 +47,7 @@ export const GAMES = [
         discount: "",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Open World", "Shooter", "First Person"],
     },
     {
         name: "Sifu",
@@ -57,6 +59,7 @@ export const GAMES = [
         discount: "50",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Action", "Fighting", "Indie"],
     },
     {
         name: "Naraka: Bladepoint",
@@ -68,6 +71,7 @@ export const GAMES = [
         discount: "",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Action"],
     },
     {
         name: "Rainbow Six: Extraction",
@@ -79,6 +83,7 @@ export const GAMES = [
         discount: "",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Shooter", "Strategy"],
     },
     {
         name: "Kena: Bridge of Spirits",
@@ -90,6 +95,7 @@ export const GAMES = [
         discount: "",
         gameOnSale: false,
         gameFeatured: true,
+        genres: ["Action", "Exploration", "Action-Adventure", "Adventure"],
     },
 
     {
@@ -102,6 +108,7 @@ export const GAMES = [
         discount: "20",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Racing", "Simulation", "Sports"],
     },
     {
         name: "Dead Cells",
@@ -113,7 +120,7 @@ export const GAMES = [
         discount: "50",
         gameOnSale: true,
         gameFeatured: false,
-        genres: ["Action"],
+        genres: ["Rogue-lite", "Indie"],
     },
     {
         name: "Golf Club Wasteland",
@@ -125,6 +132,7 @@ export const GAMES = [
         discount: "50",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Indie", "Casual", "Sports"],
     },
     {
         name: "Outerverse",
@@ -136,6 +144,7 @@ export const GAMES = [
         discount: "20",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Simulation", "Strategy", "Action-Adventure"],
     },
     {
         name: "Sheepo",
@@ -147,6 +156,7 @@ export const GAMES = [
         discount: "30",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Platformer", "Exploration", "Indie"],
     },
     {
         name: "Warshmallows",
@@ -158,6 +168,7 @@ export const GAMES = [
         discount: "70",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Shooter", "Indie"],
     },
     {
         name: "Cobra Kai",
@@ -169,6 +180,7 @@ export const GAMES = [
         discount: "60",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Fighting"],
     },
     {
         name: "Such Art",
@@ -180,6 +192,7 @@ export const GAMES = [
         discount: "20",
         gameOnSale: true,
         gameFeatured: false,
+        genres: ["Simulation", "First Person"],
     },
     {
         name: "STRANGER OF PARADISE FINAL FANTASY ORIGIN",
@@ -192,6 +205,7 @@ export const GAMES = [
         discount: null,
         gameOnSale: false,
         gameFeatured: false,
+        genres: ["Action", "RPG", "Action-Adventure", "Adventure"],
     },
     {
         name: "Rocket League",
@@ -204,5 +218,6 @@ export const GAMES = [
         discount: null,
         gameOnSale: false,
         gameFeatured: false,
+        genres: ["Sports", "Racing"],
     },
 ];

@@ -93,7 +93,7 @@ const GamesBrowseList = () => {
                 </div>
 
                 <div className="browseList-games__filters">
-                    <GamesBrowseFilters size={"big"} />
+                    <GamesBrowseFilters />
                 </div>
             </div>
         </section>
