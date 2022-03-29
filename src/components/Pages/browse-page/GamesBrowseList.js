@@ -52,7 +52,7 @@ const GamesBrowseList = () => {
                 <div className="browseList-games__list">
                     {GAMES.map((game, i) => (
                         <div key={i} className="browseList-game">
-                            <Link to={`/p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
+                            <Link to={`/store/p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
                                 <div className="game-carousel__item-image">
                                     <img src={game.posterSmall} alt={`${game.name} poster`} />
                                     <div
