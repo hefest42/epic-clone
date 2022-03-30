@@ -1,19 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import GamesBrowseFilters from "./GamesBrowseFilters";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { addGamesToWishlist } from "../../../store/AccountSlice";
 
-import { calcDiscount } from "../../../store/helperFunctions";
+import { calcDiscount, compareTwoArrays } from "../../../store/helperFunctions";
 import { GAMES } from "../../../dummy-server/DUMMY_GAMES";
 
 const GamesBrowseList = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const [showWishlistButton, setShowWishlistButton] = useState("");
     const [showDropdownMenu, setShowDropdownMenu] = useState(false);
+    const [filteredGames, setFilteredGames] = useState([]);
+
+    useEffect(() => {
+        if (location.search === "") {
+            setFilteredGames(GAMES);
+
+            return;
+        }
+
+        const selectedGenres = location.search
+            .split("&")
+            .map(string => string.split("=")[1])
+            .map(string => {
+                if (string.includes("+")) return string.replace("+", " ");
+                else return string;
+            });
+
+        const gamesFilteredByGenre = GAMES.filter(game => compareTwoArrays(game.genres, selectedGenres));
+
+        console.log(gamesFilteredByGenre);
+
+        setFilteredGames(gamesFilteredByGenre);
+    }, [location.search]);
 
     return (
         <section className="browseList">
@@ -50,7 +74,7 @@ const GamesBrowseList = () => {
 
             <div className="browseList-games">
                 <div className="browseList-games__list">
-                    {GAMES.map((game, i) => (
+                    {filteredGames.map((game, i) => (
                         <div key={i} className="browseList-game">
                             <Link to={`/store/p/${game.name.replace(":", "").split(" ").join("-").toLowerCase()}`}>
                                 <div className="game-carousel__item-image">

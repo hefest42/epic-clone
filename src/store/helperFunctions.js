@@ -6,6 +6,10 @@ export const calcDiscount = (price, discount) => {
     return (price * (100 - discount)) / 100;
 };
 
+export const compareTwoArrays = (arr1, arr2) => {
+    return arr2.every(value => arr1.includes(value));
+};
+
 export const shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 export const longMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
