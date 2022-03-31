@@ -245,6 +245,25 @@ header {
             border-radius: 30%;
         }
     }
+
+    &-recommended {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $main-gray;
+        width: 17rem;
+
+        &__item {
+            color: $main-link;
+            font-size: 1rem;
+            padding: 0.4rem 0 0.4rem 0.7rem;
+            cursor: pointer;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
 }
 
 .footer {
