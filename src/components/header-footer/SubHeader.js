@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import { compareTwoArrays } from "../../store/helperFunctions";
 import { GAMES } from "../../dummy-server/DUMMY_GAMES";
 
 const SubHeader = () => {
@@ -14,6 +15,37 @@ const SubHeader = () => {
 
     const searchSubmitHandler = e => {
         e.preventDefault();
+
+        const searchQuery = searchInput;
+
+        //TODO if array.length > 0 link to the game buy page
+        const filteredGamesByName = GAMES.filter(
+            game => game.name.replace(/[\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[\s:]/g, "").toLowerCase()
+        );
+
+        const allGenres = [...new Set(GAMES.map(game => game.genres).flat())];
+
+        //TODO when user inputs a genre confirm its in the array and push genreX=XXX to the link
+        //TODO rewrite with prettier-ignore
+        if (
+            allGenres.map((genre, i) => {
+                if (
+                    genre
+                        .replace(/[\s:-]/g, "")
+                        .toLowerCase()
+                        .trim()
+                        .includes(
+                            searchQuery
+                                .replace(/[\s:-]/g, "")
+                                .toLowerCase()
+                                .trim()
+                        )
+                ) {
+                    console.log("TEST");
+                }
+            })
+        )
+            console.log(allGenres);
     };
 
     const recommendedSearchHandler = string => {
