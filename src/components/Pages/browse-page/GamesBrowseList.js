@@ -38,8 +38,6 @@ const GamesBrowseList = () => {
             });
 
         if (location.search.includes("q=")) {
-            console.log("TEST");
-
             if (selectedGenres.slice(1).length === 0) {
                 setFilteredGames(gamesFilteredBySearchQuery);
 

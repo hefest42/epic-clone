@@ -63,6 +63,7 @@ const SubHeader = () => {
         setSearchInput("");
     };
 
+    //* clicking on the recommened search input
     const recommendedSearchHandler = string => {
         const gamesByName = GAMES.map(game => game.name);
         const allGenres = [
@@ -76,7 +77,7 @@ const SubHeader = () => {
         if (allGenres.includes(string)) {
             const index = allGenres.findIndex(str => str === string);
 
-            navigate(`/store/browse?genre${index}=${string}`);
+            navigate(`/store/browse?genre${index}=${string.replace(" ", "+")}`);
         }
 
         if (gamesByName.includes(string)) {
@@ -98,7 +99,9 @@ const SubHeader = () => {
         const allGenres = [...new Set(GAMES.map(game => game.genres).flat())];
 
         const filterGamesByName = gamesByName.filter(game => game.toLowerCase().includes(searchInput.toLowerCase()));
-        const filterGenres = allGenres.filter(genre => genre.toLowerCase().includes(searchInput.toLowerCase()));
+        const filterGenres = allGenres.filter(genre =>
+            genre.replace(/[\s-]/g, "").toLowerCase().includes(searchInput.toLowerCase().replace(/[\s-]/g, ""))
+        );
 
         setRecommendedSearches(state => [...state, ...filterGamesByName.slice(0, 2), ...filterGenres.slice(0, 2)]);
     }, [searchInput]);
