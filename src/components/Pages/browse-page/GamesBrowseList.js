@@ -24,6 +24,11 @@ const GamesBrowseList = () => {
             return;
         }
 
+        //* getting the search input query
+        const searchQueryString = location.search.split("&")[0].split("=")[1];
+        const gamesFilteredBySearchQuery = GAMES.filter(game => game.name.replace(/[\s:]/g, "").toLowerCase().includes(searchQueryString));
+
+        //* user selected genres from the sidebar
         const selectedGenres = location.search
             .split("&")
             .map(string => string.split("=")[1])
@@ -32,9 +37,24 @@ const GamesBrowseList = () => {
                 else return string;
             });
 
-        const gamesFilteredByGenre = GAMES.filter(game => compareTwoArrays(game.genres, selectedGenres));
+        if (location.search.includes("q=")) {
+            console.log("TEST");
 
-        console.log(gamesFilteredByGenre);
+            if (selectedGenres.slice(1).length === 0) {
+                setFilteredGames(gamesFilteredBySearchQuery);
+
+                return;
+            } else {
+                const queryGamesFilteredByGenre = gamesFilteredBySearchQuery.filter(game => compareTwoArrays(game.genres, selectedGenres.slice(1)));
+
+                setFilteredGames(queryGamesFilteredByGenre);
+
+                return;
+            }
+        }
+
+        //* comparring game genre array with the user selected genres, and returning the appropriate games
+        const gamesFilteredByGenre = GAMES.filter(game => compareTwoArrays(game.genres, selectedGenres));
 
         setFilteredGames(gamesFilteredByGenre);
     }, [location.search]);

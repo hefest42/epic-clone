@@ -59,7 +59,7 @@ const GamesBrowseFilters = () => {
 
         searchParams.append(fullKeyName, value);
 
-        searchParams.sort();
+        // searchParams.sort();
 
         navigation(`${location.pathname}?${searchParams.toString()}`);
     };
