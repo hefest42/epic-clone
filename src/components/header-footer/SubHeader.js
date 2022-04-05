@@ -18,7 +18,6 @@ const SubHeader = () => {
 
         const searchQuery = searchInput;
 
-        //TODO if array.length > 0 link to the game buy page
         const filteredGamesByName = GAMES.filter(
             game => game.name.replace(/[\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[\s:]/g, "").toLowerCase()
         );
@@ -31,26 +30,32 @@ const SubHeader = () => {
             ),
         ];
 
+        const filteredGenres = allGenres.filter(
+            genre =>
+                genre
+                    .replace(/[-\s:]/g, "")
+                    .trim()
+                    .toLowerCase() ===
+                searchQuery
+                    .replace(/[-\s:]/g, "")
+                    .trim()
+                    .toLowerCase()
+        );
+
         //* user inputs a game name
         if (filteredGamesByName.length > 0) {
-            console.log(filteredGamesByName[0]);
-
             navigate(`p/${filteredGamesByName[0].name.replace(":", "").split(" ").join("-").toLowerCase()}`);
         }
 
-        //* user inputs a genre into the search bar
+        //* user inputs a genre
         //prettier-ignore
-        if (allGenres.map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase()).includes(searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase())) {
-            const linkGenre = allGenres.map(genre => {
-                if (genre.replace(/[-\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase()) return genre;
-            }).filter(genre => genre !== undefined);
-
+        if (filteredGenres.length > 0) {
             const linkIndex = allGenres
                 .map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase())
                 .findIndex(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase());
 
        
-            navigate(`/store/browse?genre${linkIndex}=${linkGenre[0]}`);
+            navigate(`/store/browse?genre${linkIndex}=${filteredGenres[0]}`);
         }
 
         setSearchInput("");
