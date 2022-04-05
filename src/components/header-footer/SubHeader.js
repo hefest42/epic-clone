@@ -31,6 +31,13 @@ const SubHeader = () => {
             ),
         ];
 
+        //* user inputs a game name
+        if (filteredGamesByName.length > 0) {
+            console.log(filteredGamesByName[0]);
+
+            navigate(`p/${filteredGamesByName[0].name.replace(":", "").split(" ").join("-").toLowerCase()}`);
+        }
+
         //* user inputs a genre into the search bar
         //prettier-ignore
         if (allGenres.map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase()).includes(searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase())) {
@@ -45,6 +52,8 @@ const SubHeader = () => {
        
             navigate(`/store/browse?genre${linkIndex}=${linkGenre[0]}`);
         }
+
+        setSearchInput("");
     };
 
     const recommendedSearchHandler = string => {
