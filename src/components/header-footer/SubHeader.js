@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { compareTwoArrays } from "../../store/helperFunctions";
 import { GAMES } from "../../dummy-server/DUMMY_GAMES";
 
 const SubHeader = () => {
@@ -50,12 +49,15 @@ const SubHeader = () => {
         //* user inputs a genre
         //prettier-ignore
         if (filteredGenres.length > 0) {
-            const linkIndex = allGenres
-                .map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase())
-                .findIndex(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase());
+            const linkIndex = allGenres.findIndex(genre => genre === filteredGenres[0])
 
        
-            navigate(`/store/browse?genre${linkIndex}=${filteredGenres[0]}`);
+            navigate(`/store/browse?genre${linkIndex}=${filteredGenres[0].replace(" ", "+")}`);
+        }
+
+        //* input is just a word, not a specific game/genre
+        if (filteredGamesByName.length === 0 && filteredGenres.length === 0) {
+            navigate(`/store/browse?q=${searchInput.replace(" ", "+")}`);
         }
 
         setSearchInput("");
