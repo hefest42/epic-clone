@@ -23,29 +23,28 @@ const SubHeader = () => {
             game => game.name.replace(/[\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[\s:]/g, "").toLowerCase()
         );
 
-        const allGenres = [...new Set(GAMES.map(game => game.genres).flat())];
+        const allGenres = [
+            ...new Set(
+                GAMES.map(game => game.genres)
+                    .flat()
+                    .sort((a, b) => a.localeCompare(b))
+            ),
+        ];
 
-        //TODO when user inputs a genre confirm its in the array and push genreX=XXX to the link
-        //TODO rewrite with prettier-ignore
-        if (
-            allGenres.map((genre, i) => {
-                if (
-                    genre
-                        .replace(/[\s:-]/g, "")
-                        .toLowerCase()
-                        .trim()
-                        .includes(
-                            searchQuery
-                                .replace(/[\s:-]/g, "")
-                                .toLowerCase()
-                                .trim()
-                        )
-                ) {
-                    console.log("TEST");
-                }
-            })
-        )
-            console.log(allGenres);
+        //* user inputs a genre into the search bar
+        //prettier-ignore
+        if (allGenres.map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase()).includes(searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase())) {
+            const linkGenre = allGenres.map(genre => {
+                if (genre.replace(/[-\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase()) return genre;
+            }).filter(genre => genre !== undefined);
+
+            const linkIndex = allGenres
+                .map(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase())
+                .findIndex(genre => genre.replace(/[-\s:]/g, "").trim().toLowerCase() === searchQuery.replace(/[-\s:]/g, "").trim().toLowerCase());
+
+       
+            navigate(`/store/browse?genre${linkIndex}=${linkGenre[0]}`);
+        }
     };
 
     const recommendedSearchHandler = string => {
