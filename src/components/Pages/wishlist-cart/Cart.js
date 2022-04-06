@@ -31,7 +31,7 @@ const Cart = () => {
             <div className="cart-title">Cart</div>
             <div className="cart-inner">
                 {cartGames.length === 0 ? (
-                    <LogInWarning warning="There are no items in your cart" />
+                    <LogInWarning warning="There are no items in your Cart" />
                 ) : (
                     <div className="cart-items">
                         <div className="cart-left">
