@@ -125,7 +125,7 @@ const SubHeader = () => {
                 </form>
 
                 <div>
-                    <NavLink to="" className={navData => (navData.isActive ? "link-active" : "link")}>
+                    <NavLink to="/store/" strict={true} className={navData => (navData.isActive ? "link-active" : "link")}>
                         Discover
                     </NavLink>
                     <NavLink to="browse" className={navData => (navData.isActive ? "link-active" : "link")}>
