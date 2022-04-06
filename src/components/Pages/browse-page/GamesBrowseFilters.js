@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -13,12 +13,15 @@ const GamesBrowseFilters = () => {
     const location = useLocation();
     const navigation = useNavigate();
 
+    //* displaying filter categories
     const [showEvents, setShowEvents] = useState(true);
     const [showPrice, setShowPrice] = useState(true);
     const [showGenre, setShowGenre] = useState(true);
     const [showFeature, setShowFeature] = useState(true);
     const [showTypes, setShowTypes] = useState(true);
     const [showPlatform, setShowPlatform] = useState(true);
+
+    const [activeFilters, setActiveFilters] = useState(""); //* what filters user pressed
 
     const allGenres = [
         ...new Set(
@@ -28,25 +31,15 @@ const GamesBrowseFilters = () => {
         ),
     ];
 
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search]);
 
-    const [activeFilters, setActiveFilters] = useState(
-        location.search === ""
-            ? []
-            : searchParams
-                  .toString()
-                  .split("&")
-                  .map(str => {
-                      if (str.split("=")[1].includes("+")) return str.split("=")[1].replace("+", " ");
-                      else return str.split("=")[1];
-                  })
-    );
-
+    //* adding/removing a filter on user click
     const addFilter = term => {
         if (activeFilters.includes(term)) setActiveFilters(activeFilters.filter(filterTerm => filterTerm !== term));
         else setActiveFilters(state => [...state, term]);
     };
 
+    //* adding filters to the url via search params
     const addSearchParam = (key, value, index) => {
         const fullKeyName = `${key}${index}`;
 
@@ -63,6 +56,21 @@ const GamesBrowseFilters = () => {
 
         navigation(`${location.pathname}?${searchParams.toString()}`);
     };
+
+    //* user presses reset filters button
+    useEffect(() => {
+        location.search === ""
+            ? setActiveFilters([])
+            : setActiveFilters(
+                  searchParams
+                      .toString()
+                      .split("&")
+                      .map(str => {
+                          if (str.split("=")[1].includes("+")) return str.split("=")[1].replace("+", " ");
+                          else return str.split("=")[1];
+                      })
+              );
+    }, [location.search, searchParams]);
 
     return (
         <div className="browseFilters">
