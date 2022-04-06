@@ -10,13 +10,13 @@ const HeroCarousel = ({ games }) => {
 
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //         setCurrentSlide(currentSlide === games.length - 1 ? 0 : currentSlide + 1);
-    //     }, 7000);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide(currentSlide === games.length - 1 ? 0 : currentSlide + 1);
+        }, 7000);
 
-    //     return () => clearInterval(timer);
-    // }, [currentSlide, games.length]);
+        return () => clearInterval(timer);
+    }, [currentSlide, games.length]);
 
     const slideHandler = (slide, name) => {
         if (slide === currentSlide) {
