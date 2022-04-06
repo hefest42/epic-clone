@@ -11,9 +11,9 @@ const GamePageInformation = ({ game }) => {
                 <div className="gamePageInformation-genres__genre">
                     <div>Genres</div>
                     <div>
-                        <span>genre</span>
-                        <span>genre</span>
-                        <span>genre</span>
+                        {game.genres.map((genre, i) => (
+                            <span key={i}>{genre}</span>
+                        ))}
                     </div>
                 </div>
                 <div className="gamePageInformation-genres__genre">
